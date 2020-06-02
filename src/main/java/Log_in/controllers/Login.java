@@ -58,7 +58,15 @@ public class Login {
         }
         else
         if(Objects.equals(username,"furnizor") && Objects.equals(password,"furnizor")){
-            loginMessage.setText("Furnizor");
+            try {
+                Stage stage = (Stage) loginMessage.getScene().getWindow();
+                stage.setTitle("Furnizor");
+                Parent AdmHome = FXMLLoader.load(getClass().getResource("/HomeFurnizor.fxml"));
+                Scene scene = new Scene(AdmHome, 700, 500);
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else loginMessage.setText("Date invalide");
 
