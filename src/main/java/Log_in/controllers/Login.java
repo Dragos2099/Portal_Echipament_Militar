@@ -54,7 +54,15 @@ public class Login {
         }
         else
         if(Objects.equals(username,"manager") && Objects.equals(password,"manager")){
-            loginMessage.setText("Manager");
+            try {
+                Stage stage = (Stage) loginMessage.getScene().getWindow();
+                stage.setTitle("Manager");
+                Parent AdmHome = FXMLLoader.load(getClass().getResource("/HomeManager.fxml"));
+                Scene scene = new Scene(AdmHome, 700, 500);
+                stage.setScene(scene);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
         else
         if(Objects.equals(username,"furnizor") && Objects.equals(password,"furnizor")){

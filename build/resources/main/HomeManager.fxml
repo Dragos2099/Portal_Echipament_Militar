@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.home.HomeManager">
+    <children>
+        <Label layoutX="63.0" layoutY="25.0" text="Home Manager">
+            <font>
+                <Font size="24.0" />
+            </font>
+        </Label>
+        <Button fx:id="SIGN_OUT" layoutX="496.0" layoutY="330.0" mnemonicParsing="false" onAction="#SignOut" text="Sign out" />
+        <Button layoutX="442.0" layoutY="283.0" mnemonicParsing="false" onAction="#scmb_parola" text="Schimbare parola" />
+        <Button layoutX="91.0" layoutY="137.0" mnemonicParsing="false" onAction="#afis_cereri" text="Afisare cereri" />
+        <Button layoutX="91.0" layoutY="190.0" mnemonicParsing="false" onAction="#add_cerere" text="Adaugare cerere" />
+        <Button layoutX="90.0" layoutY="247.0" mnemonicParsing="false" onAction="#edit_cerere" text="Editare cerere" />
+        <Button layoutX="92.0" layoutY="305.0" mnemonicParsing="false" onAction="#sterge_cerere" text="Sterge cerere" />
+      <Button layoutX="89.0" layoutY="90.0" mnemonicParsing="false" onAction="#viz_oferte" text="Vizualizare oferte" />
+    </children>
+</AnchorPane>
