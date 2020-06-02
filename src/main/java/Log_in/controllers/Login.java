@@ -32,15 +32,13 @@ public class Login {
         String password = passwordField.getText();
 
         if (username == null || username.isEmpty()) {
-            loginMessage.setText("Introduceti un e-mail valid! ");
+            loginMessage.setText("Introduceti un e-mail valid ! ");
             return;
-        }
-
+        }else
         if (password == null || password.isEmpty()) {
-            loginMessage.setText("Introduceti parola!");
+            loginMessage.setText("Introduceti parola !");
             return;
-        }
-
+        } else
         if(Objects.equals(username,"administrator") && Objects.equals(password,"administrator")){
             try {
                 Stage stage = (Stage) loginMessage.getScene().getWindow();
@@ -76,7 +74,7 @@ public class Login {
                 e.printStackTrace();
             }
         }
-        else loginMessage.setText("Date invalide");
+        else loginMessage.setText("Date invalide !!");
 
 
     }
