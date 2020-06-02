@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+          fx:controller="Log_in.controllers.Login">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+   </rowConstraints>
+   <AnchorPane prefHeight="500.0" prefWidth="700.0">
+      <cursor>
+         <Cursor fx:constant="CROSSHAIR"/>
+      </cursor>
+      <TextField fx:id="usernameField" layoutX="275.0" layoutY="180.0"/>
+      <PasswordField fx:id="passwordField" layoutX="275.0" layoutY="230.0"/>
+      <Button fx:id="btn_msg" ellipsisString="" layoutX="302.0" layoutY="294.0" mnemonicParsing="false"
+              onAction="#pressButton" prefHeight="25.0" prefWidth="96.0" text="Log In" textOverrun="CENTER_ELLIPSIS">
+         <effect>
+            <Blend mode="LIGHTEN"/>
+         </effect>
+      </Button>
+      <Label layoutX="191.0" layoutY="184.0" text="E-mail"/>
+      <Label layoutX="191.0" layoutY="234.0" text="Parola"/>
+      <Label layoutX="47.0" layoutY="36.0" text="Portal Echipament Militar" textFill="#62b242"
+             AnchorPane.topAnchor="36.0">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="40.0"/>
+         </font>
+      </Label>
+      <Text fx:id="loginMessage" layoutX="250.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0"
+            wrappingWidth="200.13671875"/>
+   </AnchorPane>
+</GridPane>
