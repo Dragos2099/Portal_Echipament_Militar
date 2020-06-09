@@ -3,6 +3,7 @@ package Log_in.controllers;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -79,4 +80,18 @@ public class Login {
 
     }
 
+    public void register(ActionEvent actionEvent) {
+        try {
+
+            Parent Reg = FXMLLoader.load(getClass().getResource("/register.fxml"));
+            Stage stage =new Stage() ;
+            stage.setTitle("Register");
+            Scene scene = new Scene(Reg, 700, 500);
+            stage.setScene(scene);
+            stage.show();
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }

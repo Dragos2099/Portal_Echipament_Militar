@@ -1,3 +1,4 @@
+import Register.services.UserService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -12,6 +13,7 @@ public class JavaFXMainClass extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
+        UserService.loadUsersFromFile();
         Parent root;
         root = FXMLLoader.load(getClass().getResource("login.fxml"));
         primaryStage.setTitle("Portal Echipament Militar");
