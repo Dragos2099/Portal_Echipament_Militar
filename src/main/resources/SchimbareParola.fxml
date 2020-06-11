@@ -11,14 +11,14 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <TextField layoutX="226.0" layoutY="128.0" />
-      <PasswordField layoutX="226.0" layoutY="174.0" />
-      <PasswordField layoutX="226.0" layoutY="222.0" />
+      <TextField fx:id="UsernameField" layoutX="226.0" layoutY="128.0" />
+      <PasswordField fx:id="OldPasswordField" layoutX="226.0" layoutY="174.0" />
+      <PasswordField fx:id="NewPasswordField" layoutX="226.0" layoutY="222.0" />
       <Text layoutX="108.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text layoutX="88.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parola actuala" />
       <Text layoutX="93.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parola noua" />
-      <Button layoutX="246.0" layoutY="286.0" mnemonicParsing="false" text="Schimbare parola" />
-      <Text layoutX="289.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Button layoutX="246.0" layoutY="286.0" mnemonicParsing="false" onAction="#scmb_parola" text="Schimbare parola" />
+      <Text fx:id="ChangeMessage" layoutX="289.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>
