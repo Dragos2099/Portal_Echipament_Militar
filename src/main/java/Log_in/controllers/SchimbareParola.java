@@ -59,6 +59,8 @@ public class SchimbareParola {
             String pws=Criptare.decrypt(user.getPassword(),user.getUsername());
             if(Objects.equals(username,user.getUsername()) && Objects.equals(pws,oldpassword)){
                 ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+                user.setPassword(Criptare.encrypt(newpassword,username));
+                persistUsers();
                 Parent Log_in = FXMLLoader.load(getClass().getResource("/SchimbareParolaSuccess.fxml"));
                 Stage stage =new Stage() ;
                 stage.setTitle("Portal Echipament Militar");
