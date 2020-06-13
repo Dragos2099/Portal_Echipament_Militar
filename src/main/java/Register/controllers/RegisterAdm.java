@@ -30,10 +30,13 @@ public class RegisterAdm {
     public void initialize() {
         role.getItems().addAll("Manager","Furnizor");
     }
-    public void handleRegisterAction(ActionEvent actionEvent) throws UsernameAlreadyExistsException {
-
+    public void handleRegisterAction(ActionEvent actionEvent)  {
+        try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue());
-
+            registrationMessage.setText("Contul a fost creat!");
+        } catch (UsernameAlreadyExistsException e) {
+            registrationMessage.setText(e.getMessage());
+        }
 
     }
 
