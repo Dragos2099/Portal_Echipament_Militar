@@ -34,7 +34,7 @@ public class HomeAdministrator {
     public void register(ActionEvent actionEvent) {
 
         try {
-            Parent Reg = FXMLLoader.load(getClass().getResource("/register.fxml"));
+            Parent Reg = FXMLLoader.load(getClass().getResource("/register_adm.fxml"));
             Stage stage =new Stage() ;
             stage.setTitle("Portal Echipament Militar");
             Scene scene = new Scene(Reg, 700, 500);
