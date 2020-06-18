@@ -1,3 +1,4 @@
+import Cerere.services.CerereService;
 import Register.services.UserService;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -14,8 +15,9 @@ public class JavaFXMainClass extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         UserService.loadUsersFromFile();
+        CerereService.loadCereriFromFile();
         Parent root;
-        root = FXMLLoader.load(getClass().getResource("login.fxml"));
+        root = FXMLLoader.load(getClass().getResource("/Login/login.fxml"));
         primaryStage.setTitle("Portal Echipament Militar");
         primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.show();

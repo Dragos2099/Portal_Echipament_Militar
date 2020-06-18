@@ -17,7 +17,7 @@ public class HomeAdministrator {
     public void SignOut(ActionEvent actionEvent)  {
         try {
 
-            Parent Log_in = FXMLLoader.load(getClass().getResource("/login_adm.fxml"));
+            Parent Log_in = FXMLLoader.load(getClass().getResource("/Login/login.fxml"));
             Stage stage =new Stage() ;
             stage.setTitle("Portal Echipament Militar");
             Scene scene = new Scene(Log_in, 700, 500);
@@ -34,7 +34,7 @@ public class HomeAdministrator {
     public void register(ActionEvent actionEvent) {
 
         try {
-            Parent Reg = FXMLLoader.load(getClass().getResource("/register_adm.fxml"));
+            Parent Reg = FXMLLoader.load(getClass().getResource("/Register/register_adm.fxml"));
             Stage stage =new Stage() ;
             stage.setTitle("Portal Echipament Militar");
             Scene scene = new Scene(Reg, 700, 500);
@@ -50,7 +50,7 @@ public class HomeAdministrator {
     public void scmb_parola(ActionEvent actionEvent) {
         try {
 
-            Parent Log_in = FXMLLoader.load(getClass().getResource("/SchimbareParola.fxml"));
+            Parent Log_in = FXMLLoader.load(getClass().getResource("/Schimbare_Parola/SchimbareParola.fxml"));
             Stage stage =new Stage() ;
             stage.setTitle("Portal Echipament Militar");
             Scene scene = new Scene(Log_in, 600, 400);

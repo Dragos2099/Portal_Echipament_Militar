@@ -61,7 +61,7 @@ public class SchimbareParola {
                 ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
                 user.setPassword(Criptare.encrypt(newpassword,username));
                 persistUsers();
-                Parent Log_in = FXMLLoader.load(getClass().getResource("/SchimbareParolaSuccess.fxml"));
+                Parent Log_in = FXMLLoader.load(getClass().getResource("/Schimbare_Parola/SchimbareParolaSuccess.fxml"));
                 Stage stage =new Stage() ;
                 stage.setTitle("Portal Echipament Militar");
                 Scene scene = new Scene(Log_in, 350, 200);
