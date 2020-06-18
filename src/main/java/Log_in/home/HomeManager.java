@@ -13,7 +13,7 @@ public class HomeManager {
     public void SignOut(ActionEvent actionEvent) {
         try {
 
-            Parent Log_in = FXMLLoader.load(getClass().getResource("/login.fxml"));
+            Parent Log_in = FXMLLoader.load(getClass().getResource("/Login/login.fxml"));
             Stage stage =new Stage() ;
             stage.setTitle("Portal Echipament Militar");
             Scene scene = new Scene(Log_in, 700, 500);
@@ -28,7 +28,7 @@ public class HomeManager {
     public void scmb_parola(ActionEvent actionEvent) {
         try {
 
-            Parent Log_in = FXMLLoader.load(getClass().getResource("/SchimbareParola.fxml"));
+            Parent Log_in = FXMLLoader.load(getClass().getResource("/Schimbare_Parola/SchimbareParola.fxml"));
             Stage stage =new Stage() ;
             stage.setTitle("Portal Echipament Militar");
             Scene scene = new Scene(Log_in, 600, 400);
@@ -44,6 +44,7 @@ public class HomeManager {
     }
 
     public void add_cerere(ActionEvent actionEvent) {
+
     }
 
     public void edit_cerere(ActionEvent actionEvent) {

@@ -68,7 +68,7 @@ public class Login {
                     try {
                         Stage stage = (Stage) loginMessage.getScene().getWindow();
                         stage.setTitle("Administrator");
-                        Parent AdmHome = FXMLLoader.load(getClass().getResource("/HomeAdministrator.fxml"));
+                        Parent AdmHome = FXMLLoader.load(getClass().getResource("/Home/HomeAdministrator.fxml"));
                         Scene scene = new Scene(AdmHome, 700, 500);
                         stage.setScene(scene);
                     } catch (IOException e) {
@@ -80,7 +80,7 @@ public class Login {
                     try {
                         Stage stage = (Stage) loginMessage.getScene().getWindow();
                         stage.setTitle("Manager");
-                        Parent AdmHome = FXMLLoader.load(getClass().getResource("/HomeManager.fxml"));
+                        Parent AdmHome = FXMLLoader.load(getClass().getResource("/Home/HomeManager.fxml"));
                         Scene scene = new Scene(AdmHome, 700, 500);
                         stage.setScene(scene);
                     } catch (IOException e) {
@@ -91,7 +91,7 @@ public class Login {
                     try {
                         Stage stage = (Stage) loginMessage.getScene().getWindow();
                         stage.setTitle("Furnizor");
-                        Parent AdmHome = FXMLLoader.load(getClass().getResource("/HomeFurnizor.fxml"));
+                        Parent AdmHome = FXMLLoader.load(getClass().getResource("/Home/HomeFurnizor.fxml"));
                         Scene scene = new Scene(AdmHome, 700, 500);
                         stage.setScene(scene);
                     } catch (IOException e) {
@@ -109,7 +109,7 @@ public class Login {
     public void register(ActionEvent actionEvent) {
         try {
 
-            Parent Reg = FXMLLoader.load(getClass().getResource("/register.fxml"));
+            Parent Reg = FXMLLoader.load(getClass().getResource("/Register/register.fxml"));
             Stage stage =new Stage() ;
             stage.setTitle("Register");
             Scene scene = new Scene(Reg, 700, 500);
