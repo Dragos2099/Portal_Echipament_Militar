@@ -45,6 +45,18 @@ public class HomeManager {
 
     public void add_cerere(ActionEvent actionEvent) {
 
+        try {
+
+            Parent Log_in = FXMLLoader.load(getClass().getResource("/Cerere/Cerere.fxml"));
+            Stage stage =new Stage() ;
+            stage.setTitle("Portal Echipament Militar");
+            Scene scene = new Scene(Log_in, 360, 400);
+            stage.setScene(scene);
+            stage.show();
+            //((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void edit_cerere(ActionEvent actionEvent) {

@@ -17,7 +17,7 @@ public class HomeAdministrator {
     public void SignOut(ActionEvent actionEvent)  {
         try {
 
-            Parent Log_in = FXMLLoader.load(getClass().getResource("/login_adm.fxml"));
+            Parent Log_in = FXMLLoader.load(getClass().getResource("/Login/login.fxml"));
             Stage stage =new Stage() ;
             stage.setTitle("Portal Echipament Militar");
             Scene scene = new Scene(Log_in, 700, 500);

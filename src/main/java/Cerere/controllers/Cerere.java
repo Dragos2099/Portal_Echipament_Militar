@@ -11,4 +11,11 @@ public class Cerere {
     public TextField Bucati;
     @FXML
     public ChoiceBox Urgent;
+
+    public void initialize() {
+        Urgent.getItems().addAll("Da", "Nu");
+
+    }
+
+    
 }
