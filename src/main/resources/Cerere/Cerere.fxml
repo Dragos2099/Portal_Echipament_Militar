@@ -17,4 +17,5 @@
    <TextField fx:id="Bucati" layoutX="159.0" layoutY="188.0" />
    <ChoiceBox fx:id="Urgent" layoutX="159.0" layoutY="262.0" prefWidth="150.0" />
    <Text layoutX="54.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgent" />
+   <Button layoutX="72.0" layoutY="340.0" mnemonicParsing="false" onAction="#Creare" text="Creare" />
 </AnchorPane>
