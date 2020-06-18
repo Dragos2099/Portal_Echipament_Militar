@@ -13,10 +13,11 @@
    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
    <Text layoutX="36.0" layoutY="133.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Echipament" />
    <TextField fx:id="Echipament" layoutX="159.0" layoutY="116.0" />
-   <Text layoutX="56.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bucati" />
-   <TextField fx:id="Bucati" layoutX="159.0" layoutY="188.0" />
-   <ChoiceBox fx:id="Urgent" layoutX="159.0" layoutY="262.0" prefWidth="150.0" />
-   <Text layoutX="54.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgent" />
+   <Text layoutX="54.0" layoutY="192.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bucati" />
+   <TextField fx:id="Bucati" layoutX="157.0" layoutY="175.0" />
+   <ChoiceBox fx:id="Urgent" layoutX="158.0" layoutY="232.0" prefWidth="150.0" />
+   <Text layoutX="53.0" layoutY="249.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgent" />
    <Button layoutX="72.0" layoutY="340.0" mnemonicParsing="false" onAction="#Creare" text="Creare" />
    <Button layoutX="237.0" layoutY="340.0" mnemonicParsing="false" onAction="#Anulare" text="Anulare" />
+   <Text fx:id="Mesaj" layoutX="149.0" layoutY="307.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="61.93945348262787" />
 </AnchorPane>

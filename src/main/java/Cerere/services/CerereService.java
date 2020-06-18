@@ -1,6 +1,8 @@
 package Cerere.services;
 
 
+import Cerere.exceptions.CerereAlreadyExistsException;
+import Cerere.exceptions.CoulNotWriteCerereException;
 import Cerere.model.Request;
 
 import Register.services.FileSystemService;
@@ -30,8 +32,8 @@ public class CerereService {
         });
     }
 
-    public static void addCereri(String text1, String text2, String text3) throws IOException {
-
+    public static void addCereri(String text1, String text2, String text3) throws CerereAlreadyExistsException {
+        checkContractDoesNotAlreadyExist(text1,text2,text3);
 
         cereri.add(new Request(text1,text2,text3));
         persistCereri();
@@ -39,10 +41,22 @@ public class CerereService {
 
 
 
-    private static void persistCereri() throws IOException {
+    private static void persistCereri()  {
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), cereri);
+        try{
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), cereri);
+        } catch (IOException e) {
+            throw new CoulNotWriteCerereException();
+        }
+
+    }
+
+    private static void checkContractDoesNotAlreadyExist(String text1, String text2, String text3) throws CerereAlreadyExistsException {
+        for (Request r : cereri) {
+            if ((Objects.equals(text1, r.getEchipament())) && (Objects.equals(text2, r.getBucati())) && (Objects.equals(text3, r.getUrgent())) )
+                throw new CerereAlreadyExistsException();
+        }
 
     }
 }
