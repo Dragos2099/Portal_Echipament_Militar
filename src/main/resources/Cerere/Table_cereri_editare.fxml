@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cerere.controllers.editare.TableCereriEditare">
+    <TableView fx:id="TableView" layoutX="56.0" layoutY="92.0" prefHeight="216.0" prefWidth="234.0">
+        <columns>
+            <TableColumn fx:id="Echipament" onEditCommit="#changeEchipament" prefWidth="75.0" text="Echipament" />
+            <TableColumn fx:id="Bucati" onEditCommit="#changeBuc" prefWidth="75.0" text="Bucati" />
+            <TableColumn fx:id="Urgent" onEditCommit="#changeUrgenta" prefWidth="83.0" text="Urgent" />
+        </columns>
+    </TableView>
+    <Text layoutX="135.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cereri">
+        <font>
+            <Font size="29.0" />
+        </font>
+    </Text>
+    <Button layoutX="56.0" layoutY="346.0" mnemonicParsing="false" onAction="#Salvare" text="Salvare" />
+    <Button layoutX="238.0" layoutY="346.0" mnemonicParsing="false" onAction="#Anulare" text="Anulare" />
+</AnchorPane>

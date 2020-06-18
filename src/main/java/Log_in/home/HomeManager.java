@@ -65,7 +65,13 @@ public class HomeManager {
         }
     }
 
-    public void edit_cerere(ActionEvent actionEvent) {
+    public void edit_cerere(ActionEvent actionEvent) throws IOException {
+        Parent Log_in = FXMLLoader.load(getClass().getResource("/Cerere/Table_cereri_editare.fxml"));
+        Stage stage =new Stage() ;
+        stage.setTitle("Portal Echipament Militar");
+        Scene scene = new Scene(Log_in, 350, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void sterge_cerere(ActionEvent actionEvent) {
