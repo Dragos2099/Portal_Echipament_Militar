@@ -2,7 +2,7 @@ package Cerere.services;
 
 
 import Cerere.exceptions.CerereAlreadyExistsException;
-import Cerere.exceptions.CoulNotWriteCerereException;
+import Cerere.exceptions.CouldNotWriteCerereException;
 import Cerere.model.Request;
 
 import Register.services.FileSystemService;
@@ -23,7 +23,7 @@ public class CerereService {
 
     public static void loadCereriFromFile() throws IOException {
         if (!Files.exists(USERS_PATH)) {
-            FileUtils.copyURLToFile(CerereService.class.getClassLoader().getResource("cerere.json"), USERS_PATH.toFile());
+            FileUtils.copyURLToFile(Objects.requireNonNull(CerereService.class.getClassLoader().getResource("cerere.json")), USERS_PATH.toFile());
         }
 
         ObjectMapper objectMapper2 = new ObjectMapper();
@@ -47,7 +47,7 @@ public class CerereService {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), cereri);
         } catch (IOException e) {
-            throw new CoulNotWriteCerereException();
+            throw new CouldNotWriteCerereException();
         }
 
     }
