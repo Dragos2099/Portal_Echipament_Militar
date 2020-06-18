@@ -28,7 +28,10 @@ public class Cerere {
 
 
     public void Creare(ActionEvent actionEvent)  {
-
+        if(Bucati.getText()==null || Echipament.getText() == null || Urgent.getValue() == null) {
+            Mesaj.setText("Completati toate campurile !");
+        }
+        else
         try{
             CerereService.addCereri(Echipament.getText(),Bucati.getText(),(String) Urgent.getValue());
             Mesaj.setText("Cerere creata !");
