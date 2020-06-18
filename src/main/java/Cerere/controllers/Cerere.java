@@ -3,6 +3,7 @@ package Cerere.controllers;
 import Cerere.services.CerereService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 
@@ -24,5 +25,10 @@ public class Cerere {
 
     public void Creare(ActionEvent actionEvent) throws IOException {
         CerereService.addCereri(Echipament.getText(),Bucati.getText(),(String) Urgent.getValue());
+    }
+
+    public void Anulare(ActionEvent actionEvent) {
+
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
     }
 }

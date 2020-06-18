@@ -18,4 +18,5 @@
    <ChoiceBox fx:id="Urgent" layoutX="159.0" layoutY="262.0" prefWidth="150.0" />
    <Text layoutX="54.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgent" />
    <Button layoutX="72.0" layoutY="340.0" mnemonicParsing="false" onAction="#Creare" text="Creare" />
+   <Button layoutX="237.0" layoutY="340.0" mnemonicParsing="false" onAction="#Anulare" text="Anulare" />
 </AnchorPane>
