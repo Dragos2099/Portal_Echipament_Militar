@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.controllers.SchimbareParola">
+   <Text layoutX="208.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schimbare parola">
+      <font>
+         <Font size="24.0"/>
+      </font>
+   </Text>
+   <TextField fx:id="UsernameField" layoutX="226.0" layoutY="128.0"/>
+   <PasswordField fx:id="OldPasswordField" layoutX="226.0" layoutY="174.0"/>
+   <PasswordField fx:id="NewPasswordField" layoutX="226.0" layoutY="222.0"/>
+   <Text layoutX="108.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail"/>
+   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
+   <Text layoutX="88.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parola actuala"/>
+   <Text layoutX="93.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parola noua"/>
+   <Button layoutX="246.0" layoutY="286.0" mnemonicParsing="false" onAction="#scmb_parola" text="Schimbare parola"/>
+   <Text fx:id="ChangeMessage" layoutX="289.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+</AnchorPane>

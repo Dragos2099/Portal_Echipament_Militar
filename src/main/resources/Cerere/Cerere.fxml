@@ -15,4 +15,6 @@
    <TextField fx:id="Echipament" layoutX="159.0" layoutY="116.0" />
    <Text layoutX="56.0" layoutY="205.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bucati" />
    <TextField fx:id="Bucati" layoutX="159.0" layoutY="188.0" />
+   <ChoiceBox fx:id="Urgent" layoutX="159.0" layoutY="262.0" prefWidth="150.0" />
+   <Text layoutX="54.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgent" />
 </AnchorPane>
