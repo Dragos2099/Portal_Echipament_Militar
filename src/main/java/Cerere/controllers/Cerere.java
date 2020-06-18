@@ -1,9 +1,12 @@
 package Cerere.controllers;
 
+import Cerere.services.CerereService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+
+import java.io.IOException;
 
 public class Cerere {
     @FXML
@@ -19,6 +22,7 @@ public class Cerere {
     }
 
 
-    public void Creare(ActionEvent actionEvent) {
+    public void Creare(ActionEvent actionEvent) throws IOException {
+        CerereService.addCereri(Echipament.getText(),Bucati.getText(),(String) Urgent.getValue());
     }
 }
