@@ -8,6 +8,7 @@ import Register.services.FileSystemService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.event.ActionEvent;
+import javafx.scene.Node;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import org.apache.commons.io.FileUtils;
@@ -54,6 +55,7 @@ public class Contract {
 
 
     public void cancel(ActionEvent actionEvent) {
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
     }
 
 
