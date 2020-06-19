@@ -115,7 +115,24 @@ public class TableOferte implements Initializable {
 
     }
 
-    public void Deny(ActionEvent actionEvent) {
+    public void Deny(ActionEvent actionEvent) throws IOException {
+        Oferta o=TableView.getSelectionModel().getSelectedItem();
+        for(Oferta i : oferte){
+            if(Objects.equals(i,o)) {
+                i.setStare("Respinsa");
+                break;
+            }
+        }
+
+        persistOferte();
+
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        Parent Log_in = FXMLLoader.load(getClass().getResource("/Oferta/Table_Oferte.fxml"));
+        Stage stage =new Stage() ;
+        stage.setTitle("Portal Echipament Militar");
+        Scene scene = new Scene(Log_in, 600, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 
     public static Oferta metoda(){
