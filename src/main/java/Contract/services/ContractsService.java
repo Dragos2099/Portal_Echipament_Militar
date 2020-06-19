@@ -17,8 +17,8 @@ import java.util.Objects;
 
 public class ContractsService {
 
-    private static List<Contracts> contracts;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("contract", "contracts.json");
+    public static List<Contracts> contracts;
+    public static final Path USERS_PATH = FileSystemService.getPathToFile("contract", "contracts.json");
 
 
     public static void loadContractsFromFile() throws IOException {
@@ -49,7 +49,7 @@ public class ContractsService {
     }
 
 
-    private static void checkContractDoesNotAlreadyExist(String a,String b,String c1,String d,String e,String f) throws ContractAlreadyExistsException {
+    public static void checkContractDoesNotAlreadyExist(String a,String b,String c1,String d,String e,String f) throws ContractAlreadyExistsException {
 
         for (Contracts c : contracts) {
             if ((Objects.equals(a, c.getData())) && (Objects.equals(b, c.getBuc())) && (Objects.equals(c1, c.getTotal())) && (Objects.equals(d, c.getEchipamente())) && (Objects.equals(e, c.getNr_f())) && (Objects.equals(f, c.getNr_bm())))
