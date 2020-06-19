@@ -61,4 +61,19 @@ public class HomeAdministrator {
             e.printStackTrace();
         }
     }
+
+    public void contracte(ActionEvent actionEvent) {
+        try {
+
+            Parent Log_in = FXMLLoader.load(getClass().getResource("/Contract/Table_contracte.fxml"));
+            Stage stage =new Stage() ;
+            stage.setTitle("Portal Echipament Militar");
+            Scene scene = new Scene(Log_in, 700, 500);
+            stage.setScene(scene);
+            stage.show();
+            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 }
