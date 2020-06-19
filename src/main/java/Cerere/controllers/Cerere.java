@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Cerere {
     @FXML
@@ -28,7 +29,7 @@ public class Cerere {
 
 
     public void Creare(ActionEvent actionEvent)  {
-        if(Bucati.getText()==null || Echipament.getText() == null || Urgent.getValue() == null) {
+        if(Objects.equals(Bucati.getText(),"") || Objects.equals(Echipament.getText(), "") || Urgent.getValue() == null) {
             Mesaj.setText("Completati toate campurile !");
         }
         else

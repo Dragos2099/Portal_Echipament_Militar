@@ -10,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Offer {
 
@@ -26,11 +27,16 @@ public class Offer {
 
     public void Creare(ActionEvent actionEvent)  {
         String s="Asteptare";
-        try {
-            OfertaService.addOferte(Echipament.getText(),Bucati.getText(),Pret.getText(), Date.getValue().toString(),s);
-            Mesaj.setText("Oferta creata !");
-        } catch (OfertaAlreadyExistsException | IOException e) {
-            Mesaj.setText(e.getMessage());
+
+        if(Objects.equals(Echipament.getText(),"") || Objects.equals(Bucati.getText(),"") || Objects.equals(Pret.getText(),"") || Date.getValue()==null)
+            Mesaj.setText("Completati toate campurile !");
+          else {
+            try {
+                OfertaService.addOferte(Echipament.getText(),Bucati.getText(),Pret.getText(), Date.getValue().toString(),s);
+                Mesaj.setText("Oferta creata !");
+            } catch (OfertaAlreadyExistsException e) {
+                Mesaj.setText(e.getMessage());
+            }
         }
 
     }

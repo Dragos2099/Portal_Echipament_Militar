@@ -1,5 +1,6 @@
 package Oferta.services;
 
+import Oferta.exceptions.CouldNotWriteOfertaException;
 import Oferta.exceptions.OfertaAlreadyExistsException;
 import Oferta.model.Oferta;
 
@@ -30,7 +31,7 @@ public class OfertaService {
         });
     }
 
-    public static void addOferte(String text1, String text2, String text3,String text4,String text5) throws OfertaAlreadyExistsException, IOException {
+    public static void addOferte(String text1, String text2, String text3,String text4,String text5) throws OfertaAlreadyExistsException {
         checkOfertaDoesNotAlreadyExist(text1,text2,text3,text4,text5);
 
         oferte.add(new Oferta(text1,text2,text3,text4,text5));
@@ -45,10 +46,12 @@ public class OfertaService {
 
     }
 
-    private static void persistoferte() throws IOException {
-
+    private static void persistoferte() {
+        try{
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), oferte);
-
+        } catch (IOException e) {
+            throw new CouldNotWriteOfertaException();
+        }
     }
 }
