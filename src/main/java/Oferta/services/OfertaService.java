@@ -1,5 +1,6 @@
 package Oferta.services;
 
+import Oferta.exceptions.OfertaAlreadyExistsException;
 import Oferta.model.Oferta;
 
 import Register.services.FileSystemService;
@@ -29,13 +30,20 @@ public class OfertaService {
         });
     }
 
-    public static void addOferte(String text1, String text2, String text3,String text4,String text5) throws IOException {
+    public static void addOferte(String text1, String text2, String text3,String text4,String text5) throws OfertaAlreadyExistsException, IOException {
+        checkOfertaDoesNotAlreadyExist(text1,text2,text3,text4,text5);
 
-
-       oferte.add(new Oferta(text1,text2,text3,text4,text5));
+        oferte.add(new Oferta(text1,text2,text3,text4,text5));
         persistoferte();
     }
 
+    private static void checkOfertaDoesNotAlreadyExist(String text1, String text2, String text3,String text4,String text5) throws OfertaAlreadyExistsException {
+        for (Oferta r : oferte) {
+            if ((Objects.equals(text1, r.getEchipament())) && (Objects.equals(text2, r.getBucati())) && (Objects.equals(text3, r.getPret())) && (Objects.equals(text4, r.getData())) && (Objects.equals(text5, r.getStare())))
+                throw new OfertaAlreadyExistsException();
+        }
+
+    }
 
     private static void persistoferte() throws IOException {
 

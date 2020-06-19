@@ -1,5 +1,6 @@
 package Oferta.controllers;
 
+import Oferta.exceptions.OfertaAlreadyExistsException;
 import Oferta.services.OfertaService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,11 +24,14 @@ public class Offer {
     @FXML
     public Text Mesaj;
 
-    public void Creare(ActionEvent actionEvent) throws IOException {
+    public void Creare(ActionEvent actionEvent)  {
         String s="Asteptare";
-
+        try {
             OfertaService.addOferte(Echipament.getText(),Bucati.getText(),Pret.getText(), Date.getValue().toString(),s);
             Mesaj.setText("Oferta creata !");
+        } catch (OfertaAlreadyExistsException | IOException e) {
+            Mesaj.setText(e.getMessage());
+        }
 
     }
 
