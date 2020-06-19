@@ -14,10 +14,11 @@
           <TableColumn fx:id="Stare" onEditCommit="#changeStare" prefWidth="98.0" text="Stare" />
       </columns>
     </TableView>
-    <Text layoutX="216.0" layoutY="56.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afisare oferte">
+    <Text layoutX="200.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afisare oferte">
         <font>
           <Font size="31.0" />
         </font>
     </Text>
-   <Button layoutX="164.0" layoutY="344.0" mnemonicParsing="false" onAction="#Salvare" text="Salvare" />
+   <Button layoutX="173.0" layoutY="344.0" mnemonicParsing="false" onAction="#Salvare" text="Salvare" />
+   <Button layoutX="357.0" layoutY="344.0" mnemonicParsing="false" onAction="#Anulare" text="Anulare" />
 </AnchorPane>

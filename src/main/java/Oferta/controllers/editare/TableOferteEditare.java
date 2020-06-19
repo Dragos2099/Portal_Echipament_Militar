@@ -12,6 +12,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.control.cell.TextFieldTableCell;
@@ -131,5 +132,9 @@ public class TableOferteEditare implements Initializable {
     public void changeStare(TableColumn.CellEditEvent<Oferta, String> ofertaStringCellEditEvent) {
         Oferta req=TableView.getSelectionModel().getSelectedItem();
         req.setStare(ofertaStringCellEditEvent.getNewValue());
+    }
+
+    public void Anulare(ActionEvent actionEvent) {
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
     }
 }
