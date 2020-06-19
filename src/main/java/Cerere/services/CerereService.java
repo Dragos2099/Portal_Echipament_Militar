@@ -17,8 +17,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class CerereService {
-    private static List<Request> cereri;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("cerere", "cerere.json");
+    public static List<Request> cereri;
+    public static final Path USERS_PATH = FileSystemService.getPathToFile("cerere", "cerere.json");
 
 
     public static void loadCereriFromFile() throws IOException {
@@ -33,7 +33,7 @@ public class CerereService {
     }
 
     public static void addCereri(String text1, String text2, String text3) throws CerereAlreadyExistsException {
-        checkContractDoesNotAlreadyExist(text1,text2,text3);
+        checkCerereDoesNotAlreadyExist(text1,text2,text3);
 
         cereri.add(new Request(text1,text2,text3));
         persistCereri();
@@ -52,7 +52,7 @@ public class CerereService {
 
     }
 
-    private static void checkContractDoesNotAlreadyExist(String text1, String text2, String text3) throws CerereAlreadyExistsException {
+    public static void checkCerereDoesNotAlreadyExist(String text1, String text2, String text3) throws CerereAlreadyExistsException {
         for (Request r : cereri) {
             if ((Objects.equals(text1, r.getEchipament())) && (Objects.equals(text2, r.getBucati())) && (Objects.equals(text3, r.getUrgent())) )
                 throw new CerereAlreadyExistsException();
