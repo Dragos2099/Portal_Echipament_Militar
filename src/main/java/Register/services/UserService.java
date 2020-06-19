@@ -17,13 +17,13 @@ import java.util.Objects;
 public class UserService {
     private static SecretKeySpec secretKey;
     private static byte[] key;
-    private static List<User> users;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("utilizatori", "users.json");
+    public static List<User> users;
+    public static final Path USERS_PATH = FileSystemService.getPathToFile("utilizatori", "users.json");
 
     public static void loadUsersFromFile() throws IOException {
 
         if (!Files.exists(USERS_PATH)) {
-            FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), USERS_PATH.toFile());
+            FileUtils.copyURLToFile(Objects.requireNonNull(UserService.class.getClassLoader().getResource("users.json")), USERS_PATH.toFile());
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -38,7 +38,7 @@ public class UserService {
         persistUsers();
     }
 
-    private static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
+    public static void checkUserDoesNotAlreadyExist(String username) throws UsernameAlreadyExistsException {
 
         for (User user : users) {
             if (Objects.equals(username, user.getUsername()))
