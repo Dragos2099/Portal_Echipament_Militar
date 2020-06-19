@@ -73,6 +73,7 @@ public class TableCereriOferta implements Initializable {
         return requests;
     }
     public void selectareCerere(ActionEvent actionEvent) throws IOException {
+        req=TableView.getSelectionModel().getSelectedItem();
         Parent Log_in = FXMLLoader.load(getClass().getResource("/Oferta/Oferta.fxml"));
         Stage stage =new Stage() ;
         stage.setTitle("Portal Echipament Militar");

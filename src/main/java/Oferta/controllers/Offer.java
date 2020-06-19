@@ -1,5 +1,6 @@
 package Oferta.controllers;
 
+import Cerere.model.Request;
 import Oferta.exceptions.OfertaAlreadyExistsException;
 import Oferta.services.OfertaService;
 import javafx.event.ActionEvent;
@@ -24,6 +25,14 @@ public class Offer {
     public DatePicker Date;
     @FXML
     public Text Mesaj;
+
+    public void initialize() {
+        Request req= TableCereriOferta.metoda();
+        Bucati.setText(req.getBucati());
+        Echipament.setText(req.getEchipament());
+
+
+    }
 
     public void Creare(ActionEvent actionEvent)  {
         String s="Asteptare";
