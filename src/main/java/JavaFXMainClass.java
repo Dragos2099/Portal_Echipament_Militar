@@ -1,4 +1,5 @@
 import Cerere.services.CerereService;
+import Contract.services.ContractsService;
 import Oferta.services.OfertaService;
 import Register.services.UserService;
 import javafx.application.Application;
@@ -18,6 +19,7 @@ public class JavaFXMainClass extends Application {
         UserService.loadUsersFromFile();
         CerereService.loadCereriFromFile();
         OfertaService.loadOferteFromFile();
+        ContractsService.loadContractsFromFile();
         Parent root;
         root = FXMLLoader.load(getClass().getResource("/Login/login.fxml"));
         primaryStage.setTitle("Portal Echipament Militar");

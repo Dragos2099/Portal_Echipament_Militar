@@ -28,10 +28,39 @@ public class Contract {
     public TextField nr_f;
     public TextField nr_mil;
 
-    public void creeare_contract(ActionEvent actionEvent)  {
+    public void creeare_contract(ActionEvent actionEvent) throws IOException {
 
+        if (!Files.exists(USERS_PATH)) {
+            FileUtils.copyURLToFile(Objects.requireNonNull(OfertaService.class.getClassLoader().getResource("oferte.json")), USERS_PATH.toFile());
+        }
+
+        ObjectMapper objectMapper2 = new ObjectMapper();
+
+        oferte = objectMapper2.readValue(USERS_PATH.toFile(), new TypeReference<List<Oferta>>() {
+        });
+
+        Oferta o=TableOferte.metoda();
+        for(Oferta i : oferte){
+            if(Objects.equals(i.getStare(),"Asteptare")) {
+                i.setStare("Acceptata");
+                break;
+            }
+        }
+
+        persistOferte();
+
+        ContractsService.addContracts( date.getValue().toString(),buc.getText(),total.getText(),ec.getText(),nr_f.getText(),nr_mil.getText());
     }
 
+
     public void cancel(ActionEvent actionEvent) {
+    }
+
+
+    private void persistOferte() throws IOException {
+
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), oferte);
+
     }
 }
