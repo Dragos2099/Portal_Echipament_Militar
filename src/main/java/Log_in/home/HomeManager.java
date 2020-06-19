@@ -83,6 +83,12 @@ public class HomeManager {
         stage.show();
     }
 
-    public void viz_oferte(ActionEvent actionEvent) {
+    public void viz_oferte(ActionEvent actionEvent) throws IOException {
+        Parent Log_in = FXMLLoader.load(getClass().getResource("/Oferta/Table_Oferte.fxml"));
+        Stage stage =new Stage() ;
+        stage.setTitle("Portal Echipament Militar");
+        Scene scene = new Scene(Log_in, 600, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 }
