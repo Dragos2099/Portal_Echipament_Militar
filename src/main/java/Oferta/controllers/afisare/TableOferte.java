@@ -10,9 +10,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 import org.apache.commons.io.FileUtils;
 
 import java.io.IOException;
@@ -95,9 +100,25 @@ public class TableOferte implements Initializable {
             throw new CouldNotWriteOfertaException();
         }
     }
-    public void Accept(ActionEvent actionEvent) {
+    public void Accept(ActionEvent actionEvent) throws IOException {
+
+        of=TableView.getSelectionModel().getSelectedItem();
+
+        persistOferte();
+        Parent Log_in = FXMLLoader.load(getClass().getResource("/Contract/Contract.fxml"));
+        Stage stage =new Stage();
+        stage.setTitle("Portal Echipament Militar");
+        Scene scene = new Scene(Log_in, 423, 616);
+        stage.setScene(scene);
+        stage.show();
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+
     }
 
     public void Deny(ActionEvent actionEvent) {
+    }
+
+    public static Oferta metoda(){
+        return of;
     }
 }
