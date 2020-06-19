@@ -62,7 +62,7 @@ public class OfertaServiceTest {
         OfertaService.loadOferteFromFile();
         OfertaService.addOferte("test1", "testPass1", "test2user","test1","Test1");
         assertNotNull(OfertaService.oferte);
-        OfertaService.checkOfertaDoesNotAlreadyExist("test1","test2","test3","test4","test5");
+        OfertaService.checkOfertaDoesNotAlreadyExist("test1", "testPass1", "test2user","test1","Test1");
     }
     @Test
     public void testAddOneOfertaIsPersisted() throws Exception {

@@ -2,6 +2,7 @@ package services;
 
 import Cerere.controllers.Cerere;
 import Cerere.exceptions.CerereAlreadyExistsException;
+import Cerere.model.Request;
 import Cerere.services.CerereService;
 import Register.services.FileSystemService;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -62,13 +63,13 @@ public class CerereServiceTest {
         CerereService.loadCereriFromFile();
         CerereService.addCereri("test1", "testPass1", "test2user");
         assertNotNull(CerereService.cereri);
-        CerereService.checkCerereDoesNotAlreadyExist("test1","test2","test3");
+        CerereService.checkCerereDoesNotAlreadyExist("test1","testPass1","test2user");
     }
     @Test
     public void testAddOneCerereIsPersisted() throws Exception {
         CerereService.loadCereriFromFile();
         CerereService.addCereri("test1", "testPass1", "test2user");
-        List<Cerere> Cereres = new ObjectMapper().readValue(CerereService.USERS_PATH.toFile(), new TypeReference<List<Cerere>>() {
+        List<Request> Cereres = new ObjectMapper().readValue(CerereService.USERS_PATH.toFile(), new TypeReference<List<Request>>() {
         });
         assertNotNull(Cereres);
         assertEquals(1, Cereres.size());
@@ -78,7 +79,7 @@ public class CerereServiceTest {
         CerereService.loadCereriFromFile();
         CerereService.addCereri("test1", "testPass1", "test2user");
         CerereService.addCereri("test2", "testPass2", "test2user");
-        List<Cerere> Cereres = new ObjectMapper().readValue(CerereService.USERS_PATH.toFile(), new TypeReference<List<Cerere>>() {
+        List<Request> Cereres = new ObjectMapper().readValue(CerereService.USERS_PATH.toFile(), new TypeReference<List<Request>>() {
         });
         assertNotNull(Cereres);
         assertEquals(2,Cereres.size());

@@ -2,6 +2,7 @@ package services;
 
 import Contract.controllers.Contract;
 import Contract.exceptions.ContractAlreadyExistsException;
+import Contract.model.Contracts;
 import Contract.services.ContractsService;
 import Register.services.FileSystemService;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -63,13 +64,13 @@ public class ContractsServiceTest {
         ContractsService.loadContractsFromFile();
         ContractsService.addContracts("test1", "testPass1", "test1user","test1","Test1","11/11/1111");
         assertNotNull(ContractsService.contracts);
-        ContractsService.checkContractDoesNotAlreadyExist("test1","test2","test2","test3","test4","test5");
+        ContractsService.checkContractDoesNotAlreadyExist("test1","testPass1","test1user","test1","Test1","11/11/1111");
     }
     @Test
     public void testAddOneContractIsPersisted() throws Exception {
         ContractsService.loadContractsFromFile();
         ContractsService.addContracts("test1", "testPass1", "test1user","test1","Test1","11/11/1111");
-        List<Contract> contracts= new ObjectMapper().readValue(ContractsService.USERS_PATH.toFile(), new TypeReference<List<Contract>>() {
+        List<Contracts> contracts= new ObjectMapper().readValue(ContractsService.USERS_PATH.toFile(), new TypeReference<List<Contracts>>() {
         });
         assertNotNull(ContractsService.contracts);
         assertEquals(1, contracts.size());
@@ -79,7 +80,7 @@ public class ContractsServiceTest {
         ContractsService.loadContractsFromFile();
         ContractsService.addContracts("test1", "testPass1", "test1user","test1","Test1","11/11/1111");
         ContractsService.addContracts("test2", "testPass2", "test2user","test1","Test1","11/11/1111");
-        List<Contract> contracts= new ObjectMapper().readValue(ContractsService.USERS_PATH.toFile(), new TypeReference<List<Contract>>() {
+        List<Contracts> contracts= new ObjectMapper().readValue(ContractsService.USERS_PATH.toFile(), new TypeReference<List<Contracts>>() {
         });
         assertNotNull(ContractsService.contracts);
         assertEquals(2, contracts.size());
