@@ -16,8 +16,8 @@ import java.util.List;
 import java.util.Objects;
 
 public class OfertaService {
-    private static List<Oferta> oferte;
-    private static final Path USERS_PATH = FileSystemService.getPathToFile("oferte", "oferte.json");
+    public static List<Oferta> oferte;
+    public static final Path USERS_PATH = FileSystemService.getPathToFile("oferte", "oferte.json");
 
 
     public static void loadOferteFromFile() throws IOException {
@@ -38,7 +38,7 @@ public class OfertaService {
         persistoferte();
     }
 
-    private static void checkOfertaDoesNotAlreadyExist(String text1, String text2, String text3,String text4,String text5) throws OfertaAlreadyExistsException {
+    public static void checkOfertaDoesNotAlreadyExist(String text1, String text2, String text3,String text4,String text5) throws OfertaAlreadyExistsException {
         for (Oferta r : oferte) {
             if ((Objects.equals(text1, r.getEchipament())) && (Objects.equals(text2, r.getBucati())) && (Objects.equals(text3, r.getPret())) && (Objects.equals(text4, r.getData())) && (Objects.equals(text5, r.getStare())))
                 throw new OfertaAlreadyExistsException();
