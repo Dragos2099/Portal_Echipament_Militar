@@ -5,7 +5,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.afisare.TableOferte">
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.editare.TableOferte">
     <TableView fx:id="TableView" layoutX="36.0" layoutY="111.0" prefHeight="200.0" prefWidth="511.0">
       <columns>
           <TableColumn fx:id="Echipament" prefWidth="186.0" text="Echipament"/>
