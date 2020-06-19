@@ -6,7 +6,7 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="616.0" prefWidth="423.0" style="-fx-background-color: DARKOLIVEGREEN; -fx-border-color: darkgreen;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Contract.controllers.Contract">
-   <Text layoutX="94.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creeare Contract" wrappingWidth="284.70703125">
+   <Text layoutX="94.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creeare Contract" wrappingWidth="284.70703125">
       <font>
          <Font name="Bernard MT Condensed" size="37.0" />
       </font>
@@ -47,8 +47,9 @@
          <Font size="15.0" />
       </font>
    </Text>
-   <Button layoutX="147.0" layoutY="568.0" mnemonicParsing="false" onAction="#creeare_contract" style="-fx-background-color: green;" text="Creeare" textFill="WHITE" />
-   <Button layoutX="243.0" layoutY="568.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: green;" text="Anulare" textFill="WHITE" />
+   <Button layoutX="94.0" layoutY="568.0" mnemonicParsing="false" onAction="#creeare_contract" style="-fx-background-color: green;" text="Creeare" textFill="WHITE" />
+   <Button layoutX="265.0" layoutY="568.0" mnemonicParsing="false" onAction="#cancel" style="-fx-background-color: green;" text="Anulare" textFill="WHITE" />
+   <Text fx:id="eroare" layoutX="183.0" layoutY="546.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="57.000000558793545" />
    <cursor>
       <Cursor fx:constant="CROSSHAIR" />
    </cursor>

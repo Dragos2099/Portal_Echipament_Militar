@@ -1,5 +1,6 @@
 package Contract.controllers;
 
+import Contract.exceptions.ContractAlreadyExistsException;
 import Contract.services.ContractsService;
 import Oferta.controllers.afisare.TableOferte;
 import Oferta.model.Oferta;
@@ -11,6 +12,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.Node;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
 import org.apache.commons.io.FileUtils;
 
 import java.io.IOException;
@@ -28,6 +30,7 @@ public class Contract {
     public TextField ec;
     public TextField nr_f;
     public TextField nr_mil;
+    public Text eroare;
 
     public void creeare_contract(ActionEvent actionEvent) throws IOException {
 
@@ -49,8 +52,14 @@ public class Contract {
         }
 
         persistOferte();
+        try {
+            ContractsService.addContracts(date.getValue().toString(), buc.getText(), total.getText(), ec.getText(), nr_f.getText(), nr_mil.getText());
+            eroare.setText("Contractul a fost creat !");
+        }catch(ContractAlreadyExistsException e){
+            eroare.setText(e.getMessage());
+        }
 
-        ContractsService.addContracts( date.getValue().toString(),buc.getText(),total.getText(),ec.getText(),nr_f.getText(),nr_mil.getText());
+
     }
 
 

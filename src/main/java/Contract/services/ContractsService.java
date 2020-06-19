@@ -1,5 +1,6 @@
 package Contract.services;
 
+import Contract.exceptions.ContractAlreadyExistsException;
 import Contract.model.Contracts;
 
 import Register.services.FileSystemService;
@@ -30,8 +31,8 @@ public class ContractsService {
         });
     }
 
-    public static void addContracts(String da, String text, String text1, String text2, String text3, String text4) throws  IOException {
-
+    public static void addContracts(String da, String text, String text1, String text2, String text3, String text4) throws ContractAlreadyExistsException, IOException {
+        checkContractDoesNotAlreadyExist(da,text,text1,text2,text3,text4);
         Contracts c2=new Contracts(da,text,text1,text2,text3,text4);
         contracts.add(c2);
         persistContracts();
@@ -45,5 +46,12 @@ public class ContractsService {
     }
 
 
+    private static void checkContractDoesNotAlreadyExist(String a,String b,String c1,String d,String e,String f) throws ContractAlreadyExistsException {
+
+        for (Contracts c : contracts) {
+            if ((Objects.equals(a, c.getData())) && (Objects.equals(b, c.getBuc())) && (Objects.equals(c1, c.getTotal())) && (Objects.equals(d, c.getEchipamente())) && (Objects.equals(e, c.getNr_f())) && (Objects.equals(f, c.getNr_bm())))
+                throw new ContractAlreadyExistsException();
+        }
+    }
 
 }
