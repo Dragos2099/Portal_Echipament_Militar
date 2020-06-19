@@ -32,7 +32,7 @@ public class Contract {
     public TextField nr_mil;
     public Text eroare;
 
-    public void creeare_contract(ActionEvent actionEvent) throws IOException {
+    public void creeare_contract() throws IOException {
 
         if (!Files.exists(USERS_PATH)) {
             FileUtils.copyURLToFile(Objects.requireNonNull(OfertaService.class.getClassLoader().getResource("oferte.json")), USERS_PATH.toFile());
@@ -52,6 +52,10 @@ public class Contract {
         }
 
         persistOferte();
+
+        if(Objects.equals(buc.getText(),"") || Objects.equals(total.getText(),"") || Objects.equals(ec.getText(),"") || date.getValue()==null || Objects.equals(nr_f.getText(),"")|| Objects.equals(nr_mil.getText(),""))
+            eroare.setText("Completati toate campurile !");
+
         try {
             ContractsService.addContracts(date.getValue().toString(), buc.getText(), total.getText(), ec.getText(), nr_f.getText(), nr_mil.getText());
             eroare.setText("Contractul a fost creat !");

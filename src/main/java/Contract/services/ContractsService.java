@@ -1,6 +1,7 @@
 package Contract.services;
 
 import Contract.exceptions.ContractAlreadyExistsException;
+import Contract.exceptions.CouldNotWriteContractException;
 import Contract.model.Contracts;
 
 import Register.services.FileSystemService;
@@ -31,18 +32,20 @@ public class ContractsService {
         });
     }
 
-    public static void addContracts(String da, String text, String text1, String text2, String text3, String text4) throws ContractAlreadyExistsException, IOException {
+    public static void addContracts(String da, String text, String text1, String text2, String text3, String text4) throws ContractAlreadyExistsException {
         checkContractDoesNotAlreadyExist(da,text,text1,text2,text3,text4);
         Contracts c2=new Contracts(da,text,text1,text2,text3,text4);
         contracts.add(c2);
         persistContracts();
     }
 
-    private static void persistContracts() throws IOException {
-
+    private static void persistContracts(){
+        try{
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), contracts);
-
+        } catch (IOException e) {
+            throw new CouldNotWriteContractException();
+        }
     }
 
 
@@ -53,5 +56,4 @@ public class ContractsService {
                 throw new ContractAlreadyExistsException();
         }
     }
-
 }
