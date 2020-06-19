@@ -43,12 +43,7 @@ public class HomeFurnizor {
     }
 
     public void afis_cereri(ActionEvent actionEvent) throws IOException {
-        Parent Log_in = FXMLLoader.load(getClass().getResource("/Cerere/Table_cereri.fxml"));
-        Stage stage =new Stage() ;
-        stage.setTitle("Portal Echipament Militar");
-        Scene scene = new Scene(Log_in, 360, 400);
-        stage.setScene(scene);
-        stage.show();
+
     }
 
     public void add_oferta(ActionEvent actionEvent) {
