@@ -32,6 +32,15 @@ public class Contract {
     public TextField nr_mil;
     public Text eroare;
 
+    public void initialize(){
+        Oferta o= TableOferte.metoda();
+
+        buc.setText(o.getBucati());
+        total.setText(o.getPret());
+        ec.setText(o.getEchipament());
+
+    }
+
     public void creeare_contract() throws IOException {
 
         if (!Files.exists(USERS_PATH)) {
