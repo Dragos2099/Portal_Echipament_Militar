@@ -1,5 +1,7 @@
 package Oferta.controllers.editare;
 
+import Cerere.model.Request;
+import Oferta.exceptions.CouldNotWriteOfertaException;
 import Oferta.model.Oferta;
 import Oferta.services.OfertaService;
 import Register.services.FileSystemService;
@@ -7,6 +9,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TableColumn;
@@ -22,7 +25,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class TableOferte implements Initializable {
+public class TableOferteEditare implements Initializable {
     private static List<Oferta> oferte;
     private static final Path USERS_PATH = FileSystemService.getPathToFile("oferte", "oferte.json");
     private static Oferta of;
@@ -89,5 +92,44 @@ public class TableOferte implements Initializable {
 
 
         return offers;
+    }
+
+    public void Salvare(ActionEvent actionEvent) {
+        oferte=TableView.getItems();
+        persistOferte();
+    }
+
+    private static void persistOferte() {
+        try{
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), oferte);
+        } catch (IOException e) {
+            throw new CouldNotWriteOfertaException();
+        }
+    }
+
+    public void changeEchipament(TableColumn.CellEditEvent<Oferta, String> ofertaStringCellEditEvent) {
+        Oferta req=TableView.getSelectionModel().getSelectedItem();
+        req.setEchipament(ofertaStringCellEditEvent.getNewValue());
+    }
+
+    public void changeBucati(TableColumn.CellEditEvent<Oferta, String> ofertaStringCellEditEvent) {
+        Oferta req=TableView.getSelectionModel().getSelectedItem();
+        req.setBucati(ofertaStringCellEditEvent.getNewValue());
+    }
+
+    public void changePret(TableColumn.CellEditEvent<Oferta, String> ofertaStringCellEditEvent) {
+        Oferta req=TableView.getSelectionModel().getSelectedItem();
+        req.setPret(ofertaStringCellEditEvent.getNewValue());
+    }
+
+    public void changeData(TableColumn.CellEditEvent<Oferta, String> ofertaStringCellEditEvent) {
+        Oferta req=TableView.getSelectionModel().getSelectedItem();
+        req.setData(ofertaStringCellEditEvent.getNewValue());
+    }
+
+    public void changeStare(TableColumn.CellEditEvent<Oferta, String> ofertaStringCellEditEvent) {
+        Oferta req=TableView.getSelectionModel().getSelectedItem();
+        req.setStare(ofertaStringCellEditEvent.getNewValue());
     }
 }
