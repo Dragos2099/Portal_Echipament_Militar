@@ -5,7 +5,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -68,7 +67,7 @@ public class HomeFurnizor {
     }
 
     public void edit_oferta(ActionEvent actionEvent) throws IOException {
-        Parent Log_in = FXMLLoader.load(getClass().getResource("/Oferta/Table_Oferte.fxml"));
+        Parent Log_in = FXMLLoader.load(getClass().getResource("/Oferta/Table_oferte_edit.fxml"));
         Stage stage =new Stage() ;
         stage.setTitle("Portal Echipament Militar");
         Scene scene = new Scene(Log_in, 600, 400);
@@ -76,6 +75,12 @@ public class HomeFurnizor {
         stage.show();
     }
 
-    public void sterge_oferta(ActionEvent actionEvent) {
+    public void sterge_oferta(ActionEvent actionEvent) throws IOException {
+        Parent Log_in = FXMLLoader.load(getClass().getResource("/Oferta/Table_Oferte_sterge.fxml"));
+        Stage stage =new Stage() ;
+        stage.setTitle("Portal Echipament Militar");
+        Scene scene = new Scene(Log_in, 600, 400);
+        stage.setScene(scene);
+        stage.show();
     }
 }
