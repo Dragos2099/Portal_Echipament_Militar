@@ -69,7 +69,7 @@ public class TableCereri_sterge implements Initializable {
 
 
 
-    public void Sterge(ActionEvent actionEvent) {
+    public void Sterge() {
         Request req=TableView.getSelectionModel().getSelectedItem();
 
         cereri.remove(req);

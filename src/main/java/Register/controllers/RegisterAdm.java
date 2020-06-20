@@ -18,19 +18,19 @@ import java.io.IOException;
 
 public class RegisterAdm {
     @FXML
-    private Text registrationMessage;
+    public Text registrationMessage;
     @FXML
-    private PasswordField passwordField;
+    public PasswordField passwordField;
     @FXML
-    private TextField usernameField;
+    public TextField usernameField;
     @FXML
-    private ChoiceBox<String> role;
+    public ChoiceBox<String> role;
 
     @FXML
     public void initialize() {
         role.getItems().addAll("Manager","Furnizor");
     }
-    public void handleRegisterAction(ActionEvent actionEvent)  {
+    public void handleRegisterAction()  {
         try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue());
             registrationMessage.setText("Contul a fost creat!");

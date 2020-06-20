@@ -29,16 +29,16 @@ public class TableCereriEditare implements Initializable {
     private static List<Request> cereri;
     private static final Path USERS_PATH = FileSystemService.getPathToFile("cerere", "cerere.json");
     @FXML
-    private javafx.scene.control.TableView<Request> TableView;
+    public javafx.scene.control.TableView<Request> TableView;
 
     @FXML
-    private TableColumn<Request,String> Echipament;
+    public TableColumn<Request,String> Echipament;
 
     @FXML
-    private TableColumn<Request,String> Bucati;
+    public TableColumn<Request,String> Bucati;
 
     @FXML
-    private TableColumn<Request,String> Urgent;
+    public TableColumn<Request,String> Urgent;
 
     public void initialize(URL location, ResourceBundle resources) {
 
@@ -90,7 +90,7 @@ public class TableCereriEditare implements Initializable {
         req.setUrgent(requestStringCellEditEvent.getNewValue());
     }
 
-    public void Salvare(ActionEvent actionEvent) {
+    public void Salvare() {
         cereri=TableView.getItems();
         persistCereri();
     }
@@ -99,12 +99,16 @@ public class TableCereriEditare implements Initializable {
         ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
     }
 
-    private void persistCereri() {
+    public void persistCereri() {
         try{
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.writerWithDefaultPrettyPrinter().writeValue(USERS_PATH.toFile(), cereri);
         } catch (IOException e) {
             throw new CouldNotWriteCerereException();
         }
+    }
+
+    public static List<Request> getCereri() {
+        return cereri;
     }
 }

@@ -5,6 +5,7 @@ import Cerere.services.CerereService;
 import Register.controllers.Register;
 import Register.services.FileSystemService;
 import Register.services.UserService;
+import javafx.event.ActionEvent;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -17,6 +18,7 @@ import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 public class CerereTest extends ApplicationTest {
 
@@ -57,12 +59,13 @@ public class CerereTest extends ApplicationTest {
     @Test
     public void testHandleAddCerereActionCode() {
         controller.Creare();
+        assertNotNull(CerereService.getCereri());
         assertEquals(1, CerereService.getCereri().size());
         assertEquals("Cerere creata !", controller.Mesaj.getText());
     }
 
     @Test
-    public void testAddSameCerereTwice() {
+    public void testCreare() {
         controller.Creare();
         controller.Creare();
         assertEquals("Cererea exista deja!", controller.Mesaj.getText());
@@ -129,6 +132,20 @@ public class CerereTest extends ApplicationTest {
         controller.Urgent.setValue("Da");
         controller.Creare();
         assertEquals("Completati toate campurile !", controller.Mesaj.getText());
+    }
+
+    @Test
+    public void testAddOneCerere() throws Exception {
+        CerereService.loadCereriFromFile();
+        CerereService.addCereri("test", "testPass", "test1user");
+        assertNotNull(CerereService.cereri);
+        assertEquals(1, CerereService.cereri.size());
+    }
+
+    @Test (expected = NullPointerException.class)
+    public void testAnulare() throws Exception {
+        ActionEvent actionEvent = null;
+        controller.Anulare(actionEvent);
     }
 
 }

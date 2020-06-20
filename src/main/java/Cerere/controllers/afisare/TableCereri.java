@@ -48,7 +48,7 @@ public class TableCereri implements Initializable {
         }
     }
 
-    private ObservableList<Request> getPeople() throws IOException {
+    public ObservableList<Request> getPeople() throws IOException {
         ObservableList<Request> requests= FXCollections.observableArrayList();
 
         if (!Files.exists(USERS_PATH)) {
@@ -63,4 +63,9 @@ public class TableCereri implements Initializable {
         requests.addAll(cereri);
         return requests;
     }
+
+    public static List<Request> getCereri() {
+        return cereri;
+    }
+
 }
