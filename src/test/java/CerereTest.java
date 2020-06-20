@@ -1,5 +1,3 @@
-package controllers.Cerere;
-
 import Cerere.controllers.Cerere;
 import Cerere.services.CerereService;
 import Register.controllers.Register;

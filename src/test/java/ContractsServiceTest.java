@@ -1,5 +1,3 @@
-package services;
-
 import Contract.controllers.Contract;
 import Contract.exceptions.ContractAlreadyExistsException;
 import Contract.model.Contracts;

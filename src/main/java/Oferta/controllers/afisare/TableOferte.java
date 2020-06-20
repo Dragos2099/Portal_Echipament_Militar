@@ -33,19 +33,19 @@ public class TableOferte implements Initializable {
     private static final Path USERS_PATH = FileSystemService.getPathToFile("oferte", "oferte.json");
     private static Oferta of;
     @FXML
-    private javafx.scene.control.TableView<Oferta> TableView;
+    public javafx.scene.control.TableView<Oferta> TableView;
 
     @FXML
-    private TableColumn<Oferta,String> Data;
+    public TableColumn<Oferta,String> Data;
 
     @FXML
-    private TableColumn<Oferta,String> Echipament;
+    public TableColumn<Oferta,String> Echipament;
     @FXML
-    private TableColumn<Oferta,String> Pret;
+    public TableColumn<Oferta,String> Pret;
     @FXML
-    private TableColumn<Oferta,String> Bucati;
+    public TableColumn<Oferta,String> Bucati;
     @FXML
-    private TableColumn<Oferta,String> Stare;
+    public TableColumn<Oferta,String> Stare;
     public void initialize(URL location, ResourceBundle resources) {
 
 
@@ -65,7 +65,7 @@ public class TableOferte implements Initializable {
 
     }
 
-    private ObservableList<Oferta> getPeople() throws IOException {
+    public ObservableList<Oferta> getPeople() throws IOException {
 
         ObservableList<Oferta> offers= FXCollections.observableArrayList();
 
@@ -137,5 +137,9 @@ public class TableOferte implements Initializable {
 
     public static Oferta metoda(){
         return of;
+    }
+
+    public static List<Oferta> getOferte() {
+        return oferte;
     }
 }

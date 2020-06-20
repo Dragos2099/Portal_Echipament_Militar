@@ -1,5 +1,3 @@
-package controllers.LogIn;
-
 import Log_in.controllers.Login;
 import Register.controllers.Register;
 import Register.controllers.RegisterAdm;

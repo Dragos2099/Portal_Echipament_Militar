@@ -1,5 +1,3 @@
-package services;
-
 import Cerere.controllers.Cerere;
 import Cerere.exceptions.CerereAlreadyExistsException;
 import Cerere.model.Request;

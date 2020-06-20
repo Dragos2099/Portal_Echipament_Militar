@@ -1,5 +1,6 @@
 package Oferta.services;
 
+import Cerere.model.Request;
 import Oferta.exceptions.CouldNotWriteOfertaException;
 import Oferta.exceptions.OfertaAlreadyExistsException;
 import Oferta.model.Oferta;
@@ -53,5 +54,10 @@ public class OfertaService {
         } catch (IOException e) {
             throw new CouldNotWriteOfertaException();
         }
+    }
+
+
+    public static List<Oferta> getOferte() {
+        return oferte;
     }
 }

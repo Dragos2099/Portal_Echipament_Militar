@@ -1,11 +1,10 @@
-package controllers.Cerere;
-
-import Cerere.controllers.afisare.TableCereri;
 import Cerere.controllers.editare.TableCereriEditare;
 import Cerere.model.Request;
 import Cerere.services.CerereService;
+import Oferta.controllers.afisare.TableOferte;
+import Oferta.controllers.editare.TableOferteEditare;
+import Oferta.services.OfertaService;
 import Register.services.FileSystemService;
-import Register.services.UserService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
@@ -16,32 +15,32 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.testfx.framework.junit.ApplicationTest;
 
-import java.io.IOException;
-
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class Cerere_editTest extends ApplicationTest {
+public class Oferta_editTest extends ApplicationTest {
     private ObservableList<Request> elem;
 
-    private TableCereriEditare controller;
+    private TableOferteEditare controller;
 
     @BeforeClass
     public static void setupClass() throws Exception {
         FileSystemService.APPLICATION_FOLDER = "PEM";
         FileSystemService.initApplicationHomeDirIfNeeded();
-        CerereService.loadCereriFromFile();
+        OfertaService.loadOferteFromFile();
     }
 
     @Before
     public void setUp() throws Exception {
         FileUtils.cleanDirectory(FileSystemService.getApplicationHomePath().toFile());
-        CerereService.loadCereriFromFile();
+        OfertaService.loadOferteFromFile();
 
-        controller = new TableCereriEditare();
+        controller = new TableOferteEditare();
         controller.Echipament = new TableColumn<>();
         controller.Bucati = new TableColumn<>();
-        controller.Urgent = new TableColumn<>();
+        controller.Data = new TableColumn<>();
+        controller.Pret = new TableColumn<>();
+        controller.Stare = new TableColumn<>();
         controller.TableView= new javafx.scene.control.TableView<>();
 
         elem= FXCollections.observableArrayList(CerereService.getCereri());
@@ -56,7 +55,7 @@ public class Cerere_editTest extends ApplicationTest {
     @Test
     public void testPeople() {
         controller.Salvare();
-        assertNotNull(controller.getCereri());
+        assertNotNull(controller.getOferte());
 
     }
 
@@ -64,8 +63,7 @@ public class Cerere_editTest extends ApplicationTest {
     @Test
     public void testPersist() {
         controller.Salvare();
-        assertEquals(0, controller.getCereri().size());
+        assertEquals(0, controller.getOferte().size());
 
     }
-
 }
