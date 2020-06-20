@@ -39,7 +39,7 @@ public class Login {
     public Button btn_msg;
 
 
-    public void pressButton(ActionEvent actionEvent) throws IOException {
+    public void pressButton() throws IOException {
         String username = usernameField.getText();
         String password = passwordField.getText();
 
