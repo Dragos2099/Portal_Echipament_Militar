@@ -20,7 +20,7 @@ public class Cerere {
     @FXML
     public ChoiceBox Urgent;
     @FXML
-    private Text Mesaj;
+    public Text Mesaj;
 
     public void initialize() {
         Urgent.getItems().addAll("Da", "Nu");
@@ -28,8 +28,8 @@ public class Cerere {
     }
 
 
-    public void Creare(ActionEvent actionEvent)  {
-        if(Objects.equals(Bucati.getText(),"") || Objects.equals(Echipament.getText(), "") || Urgent.getValue() == null) {
+    public void Creare()  {
+        if(Objects.equals(Bucati.getText(),"") || Objects.equals(Echipament.getText(), "") || (Objects.equals(Urgent.getValue(),""))) {
             Mesaj.setText("Completati toate campurile !");
         }
         else
