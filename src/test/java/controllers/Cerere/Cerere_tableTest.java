@@ -1,3 +1,5 @@
+package controllers.Cerere;
+
 import Cerere.controllers.Cerere;
 import Cerere.controllers.afisare.TableCereri;
 import Cerere.model.Request;

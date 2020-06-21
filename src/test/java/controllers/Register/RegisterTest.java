@@ -1,3 +1,5 @@
+package controllers.Register;
+
 import Register.controllers.Register;
 import Register.services.FileSystemService;
 import Register.services.UserService;

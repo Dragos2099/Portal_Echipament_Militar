@@ -1,3 +1,5 @@
+package services;
+
 import Register.exceptions.UsernameAlreadyExistsException;
 import Register.model.User;
 import Register.services.Criptare;

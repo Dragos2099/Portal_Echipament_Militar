@@ -1,9 +1,9 @@
-import Cerere.controllers.afisare.TableCereri;
-import Cerere.model.Request;
-import Cerere.services.CerereService;
-import Oferta.controllers.afisare.TableOferte;
-import Oferta.model.Oferta;
-import Oferta.services.OfertaService;
+package controllers.Contract;
+
+import Contract.controllers.Contract;
+import Contract.controllers.afisare.TableContracte;
+import Contract.model.Contracts;
+import Contract.services.ContractsService;
 import Register.services.FileSystemService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,32 +20,34 @@ import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class Oferta_tableTest extends ApplicationTest {
+public class Contract_tableTest extends ApplicationTest {
+    private ObservableList<Contracts> elem;
 
-    private ObservableList<Oferta> elem;
-    private TableOferte controller;
+
+    private TableContracte controller;
 
     @BeforeClass
     public static void setupClass() throws Exception {
         FileSystemService.APPLICATION_FOLDER = "PEM";
         FileSystemService.initApplicationHomeDirIfNeeded();
-        OfertaService.loadOferteFromFile();
+        ContractsService.loadContractsFromFile();
     }
 
     @Before
     public void setUp() throws Exception {
         FileUtils.cleanDirectory(FileSystemService.getApplicationHomePath().toFile());
-        OfertaService.loadOferteFromFile();
+        ContractsService.loadContractsFromFile();
 
-        controller = new TableOferte();
-        controller.Echipament = new TableColumn<>();
-        controller.Bucati = new TableColumn<>();
-        controller.Data = new TableColumn<>();
-        controller.Pret = new TableColumn<>();
-        controller.Stare = new TableColumn<>();
+        controller = new TableContracte();
+        controller.Echipamente= new TableColumn<>();
+        controller.Buc = new TableColumn<>();
+        controller.Total = new TableColumn<>();
+        controller.Nr_bm = new TableColumn<>();
+        controller.Nr_f= new TableColumn<>();
+        controller.Data= new TableColumn<>();
         controller.TableView= new javafx.scene.control.TableView<>();
 
-        elem=FXCollections.observableArrayList(OfertaService.getOferte());
+        elem= FXCollections.observableArrayList(ContractsService.getContracts());
 
     }
 
@@ -57,9 +59,9 @@ public class Oferta_tableTest extends ApplicationTest {
     @Test
     public void testPeople() throws IOException {
         controller.getPeople();
-        assertNotNull(controller.getOferte());
+        assertNotNull(controller.getContracts());
 
-        assertEquals(elem, controller.getOferte());
+        assertEquals(elem, controller.getContracts());
 
     }
 

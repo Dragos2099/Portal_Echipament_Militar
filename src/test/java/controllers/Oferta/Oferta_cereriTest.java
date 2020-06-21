@@ -1,9 +1,13 @@
+package controllers.Oferta;
+
 import Cerere.controllers.afisare.TableCereri;
-import Cerere.controllers.editare.TableCereriEditare;
 import Cerere.model.Request;
 import Cerere.services.CerereService;
+import Oferta.controllers.TableCereriOferta;
+import Oferta.controllers.afisare.TableOferte;
+import Oferta.model.Oferta;
+import Oferta.services.OfertaService;
 import Register.services.FileSystemService;
-import Register.services.UserService;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.control.TableColumn;
@@ -19,10 +23,10 @@ import java.io.IOException;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 
-public class Cerere_editTest extends ApplicationTest {
+public class Oferta_cereriTest extends ApplicationTest {
     private ObservableList<Request> elem;
 
-    private TableCereriEditare controller;
+    private TableCereri controller;
 
     @BeforeClass
     public static void setupClass() throws Exception {
@@ -36,7 +40,7 @@ public class Cerere_editTest extends ApplicationTest {
         FileUtils.cleanDirectory(FileSystemService.getApplicationHomePath().toFile());
         CerereService.loadCereriFromFile();
 
-        controller = new TableCereriEditare();
+        controller = new TableCereri();
         controller.Echipament = new TableColumn<>();
         controller.Bucati = new TableColumn<>();
         controller.Urgent = new TableColumn<>();
@@ -52,18 +56,13 @@ public class Cerere_editTest extends ApplicationTest {
     }
 
     @Test
-    public void testPeople() {
-        controller.Salvare();
+    public void testPeople() throws IOException {
+        controller.getPeople();
         assertNotNull(controller.getCereri());
 
-    }
-
-
-    @Test
-    public void testPersist() {
-        controller.Salvare();
-        assertEquals(0, controller.getCereri().size());
+        assertEquals(elem, controller.getCereri());
 
     }
+
 
 }

@@ -1,3 +1,5 @@
+package controllers.Contract;
+
 import Cerere.controllers.Cerere;
 import Cerere.services.CerereService;
 import Contract.controllers.Contract;

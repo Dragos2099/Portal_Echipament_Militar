@@ -1,3 +1,5 @@
+package controllers.Oferta;
+
 import Cerere.controllers.Cerere;
 import Cerere.services.CerereService;
 import Oferta.controllers.Offer;
