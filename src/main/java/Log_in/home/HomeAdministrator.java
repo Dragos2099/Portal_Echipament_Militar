@@ -40,7 +40,7 @@ public class HomeAdministrator {
             Scene scene = new Scene(Reg, 700, 500);
             stage.setScene(scene);
             stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
