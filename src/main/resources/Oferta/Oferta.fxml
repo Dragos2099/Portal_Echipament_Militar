@@ -7,7 +7,7 @@
 
 <AnchorPane opacity="0.98" prefHeight="490.0" prefWidth="362.0" style="-fx-background-color: #293621;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.Offer">
     <ImageView fitHeight="490.0" fitWidth="362.0" layoutY="4.0" opacity="0.17" pickOnBounds="true" preserveRatio="true">
-        <Image url="@../images/20.jpg"/>
+        <Image url="@../images/20.jpg" />
     </ImageView>
     <Text fill="#99a395" layoutX="10.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creare oferta">
         <font>
@@ -24,7 +24,10 @@
         </font></Button>
     <TextField fx:id="Echipament" layoutX="157.0" layoutY="120.0" prefHeight="25.0" prefWidth="152.0" promptText="echipament" style="-fx-background-color: #809174;" />
     <TextField fx:id="Bucati" layoutX="157.0" layoutY="183.0" prefHeight="25.0" prefWidth="152.0" promptText="bucati" style="-fx-background-color: #809174;" />
-    <Text fx:id="Mesaj" layoutX="131.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="101.0" />
+    <Text fx:id="Mesaj" fill="#a4a4a4" layoutX="118.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="229.00000071525574">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font></Text>
     <TextField fx:id="Pret" layoutX="157.0" layoutY="251.0" prefHeight="25.0" prefWidth="152.0" promptText="pret" style="-fx-background-color: #809174;" />
     <DatePicker fx:id="Date" layoutX="157.0" layoutY="314.0" prefHeight="25.0" prefWidth="152.0" promptText="data" style="-fx-background-color: #809174;" />
    <Text fill="#a4a4a4" layoutX="32.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Echipament">
