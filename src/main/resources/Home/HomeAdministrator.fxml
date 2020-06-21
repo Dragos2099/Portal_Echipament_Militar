@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.home.HomeAdministrator">
-   <Label layoutX="61.0" layoutY="34.0" text="Home Administrator">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #555c3e;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.home.HomeAdministrator">
+   <ImageView fitHeight="500.0" fitWidth="309.0" layoutX="185.0" opacity="0.45" pickOnBounds="true"
+              preserveRatio="true">
+      <Image url="@../images/2.jpg"/>
+   </ImageView>
+   <Label layoutX="21.0" layoutY="31.0" opacity="0.95" prefHeight="40.0" prefWidth="172.0" text="Home Admini" textFill="#cedaea">
       <font>
-         <Font size="24.0" />
+         <Font size="28.0" />
       </font>
    </Label>
-   <Button layoutX="72.0" layoutY="95.0" mnemonicParsing="false" onAction="#register" text="Creare cont" />
-   <Button layoutX="496.0" layoutY="330.0" mnemonicParsing="false" onAction="#SignOut" text="Sign out" />
-   <Button layoutX="442.0" layoutY="283.0" mnemonicParsing="false" onAction="#scmb_parola" text="Schimbare parola" />
-   <Button layoutX="72.0" layoutY="167.0" mnemonicParsing="false" onAction="#contracte" text="Contracte" />
+   <Button layoutX="21.0" layoutY="95.0" mnemonicParsing="false" onAction="#register" opacity="0.83" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #37354a;" text="Creare cont" textFill="#cedaea" />
+   <Button layoutX="503.0" layoutY="330.0" mnemonicParsing="false" onAction="#SignOut" opacity="0.95" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #37354a;" text="Sign out" textFill="#cedaea" />
+   <Button layoutX="503.0" layoutY="284.0" mnemonicParsing="false" onAction="#scmb_parola" opacity="0.87" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #37354a;" text="Schimbare parola" textFill="#cedaea" />
+   <Button layoutX="21.0" layoutY="166.0" mnemonicParsing="false" onAction="#contracte" opacity="0.8" prefHeight="25.0" prefWidth="150.0" style="-fx-background-color: #37354a;" text="Contracte" textFill="#cedaea" />
+   <Label layoutX="190.0" layoutY="31.0" prefHeight="40.0" prefWidth="110.0" text="strator" textFill="#37354a">
+      <font>
+         <Font size="28.0" />
+      </font>
+   </Label>
 </AnchorPane>
