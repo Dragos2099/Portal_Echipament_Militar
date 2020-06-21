@@ -107,10 +107,5 @@ public class ContractTest extends ApplicationTest {
         assertEquals(1, ContractsService.contracts.size());
     }
 
-    @Test (expected = NullPointerException.class)
-    public void testAnulare() {
-        ActionEvent actionEvent = null;
-        controller.cancel(actionEvent);
-    }
 
 }
