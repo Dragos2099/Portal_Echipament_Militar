@@ -40,7 +40,7 @@ public class HomeAdministrator {
             Scene scene = new Scene(Reg, 700, 500);
             stage.setScene(scene);
             stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -68,7 +68,7 @@ public class HomeAdministrator {
             Parent Log_in = FXMLLoader.load(getClass().getResource("/Contract/Table_contracte.fxml"));
             Stage stage =new Stage() ;
             stage.setTitle("Portal Echipament Militar");
-            Scene scene = new Scene(Log_in, 700, 500);
+            Scene scene = new Scene(Log_in, 700, 585);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

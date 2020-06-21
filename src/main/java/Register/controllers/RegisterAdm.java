@@ -15,6 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class RegisterAdm {
     @FXML
@@ -31,27 +32,25 @@ public class RegisterAdm {
         role.getItems().addAll("Manager","Furnizor");
     }
     public void handleRegisterAction()  {
-        try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue());
-            registrationMessage.setText("Contul a fost creat!");
-        } catch (UsernameAlreadyExistsException e) {
-            registrationMessage.setText(e.getMessage());
+        String username=usernameField.getText();
+        String password=passwordField.getText();
+
+
+        if(username.length()==0 || password.length()==0 || Objects.equals(role.getValue(),null))
+            registrationMessage.setText("Completati toate campurile !");
+        else {
+            try {
+                UserService.addUser(usernameField.getText(), passwordField.getText(), role.getValue());
+                registrationMessage.setText("Contul a fost creat!");
+            } catch (UsernameAlreadyExistsException e) {
+                registrationMessage.setText(e.getMessage());
+            }
         }
 
     }
 
     public void back(ActionEvent actionEvent) {
-        try {
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
 
-            Parent Log_in = FXMLLoader.load(getClass().getResource("/Login/login.fxml"));
-            Stage stage =new Stage() ;
-            stage.setTitle("LOG_IN");
-            Scene scene = new Scene(Log_in, 700, 500);
-            stage.setScene(scene);
-            stage.show();
-            ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }

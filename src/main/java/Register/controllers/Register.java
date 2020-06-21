@@ -15,6 +15,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.Objects;
 
 public class Register {
 
@@ -33,11 +34,19 @@ public class Register {
 
 
     public void handleRegisterAction() {
-        try {
-            UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
-            registrationMessage.setText("Account created successfully!");
-        } catch (UsernameAlreadyExistsException e) {
-            registrationMessage.setText(e.getMessage());
+        String username=usernameField.getText();
+        String password=passwordField.getText();
+
+
+        if(username.length()==0 || password.length()==0 || Objects.equals(role.getValue(),null))
+            registrationMessage.setText("Completati toate campurile !");
+        else {
+            try {
+                UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
+                registrationMessage.setText("Contul a fost creat!");
+            } catch (UsernameAlreadyExistsException e) {
+                registrationMessage.setText(e.getMessage());
+            }
         }
     }
 

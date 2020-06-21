@@ -1,23 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.controllers.SchimbareParola">
-   <Text layoutX="208.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schimbare parola">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #807839;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.controllers.SchimbareParola">
+   <ImageView fitHeight="400.0" fitWidth="348.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../images/11.jpg"/>
+   </ImageView>
+   <Text fill="#3c4029" layoutX="122.0" layoutY="67.0" opacity="0.89" strokeType="OUTSIDE" strokeWidth="0.0" text="Schimbare parola">
       <font>
-         <Font size="24.0"/>
+         <Font name="Copperplate Gothic Bold" size="35.0" />
       </font>
    </Text>
-   <TextField fx:id="UsernameField" layoutX="226.0" layoutY="128.0"/>
-   <PasswordField fx:id="OldPasswordField" layoutX="226.0" layoutY="174.0"/>
-   <PasswordField fx:id="NewPasswordField" layoutX="226.0" layoutY="222.0"/>
-   <Text layoutX="108.0" layoutY="145.0" strokeType="OUTSIDE" strokeWidth="0.0" text="E-mail"/>
-   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text"/>
-   <Text layoutX="88.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parola actuala"/>
-   <Text layoutX="93.0" layoutY="239.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Parola noua"/>
-   <Button layoutX="246.0" layoutY="286.0" mnemonicParsing="false" onAction="#scmb_parola" text="Schimbare parola"/>
-   <Text fx:id="ChangeMessage" layoutX="289.0" layoutY="356.0" strokeType="OUTSIDE" strokeWidth="0.0"/>
+   <TextField fx:id="UsernameField" layoutX="173.0" layoutY="127.0" opacity="0.88" prefHeight="25.0" prefWidth="254.0" promptText="username" style="-fx-background-color: #555c3b;" />
+   <PasswordField fx:id="OldPasswordField" layoutX="173.0" layoutY="175.0" opacity="0.87" prefHeight="25.0" prefWidth="254.0" promptText="parola actuala" style="-fx-background-color: #555c3b;" />
+   <PasswordField fx:id="NewPasswordField" layoutX="173.0" layoutY="223.0" opacity="0.88" prefHeight="25.0" prefWidth="254.0" promptText="parola noua" style="-fx-background-color: #555c3b;" />
+   <Button layoutX="218.0" layoutY="286.0" mnemonicParsing="false" onAction="#scmb_parola" opacity="0.88" prefHeight="25.0" prefWidth="164.0" style="-fx-background-color: #555c3b;" text="Schimbare parola" textFill="#bfbebb" />
+   <Text fx:id="ChangeMessage" fill="#eeecec" layoutX="170.0" layoutY="348.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="261.0">
+      <font>
+         <Font size="20.0" />
+      </font></Text>
+   <Button layoutX="508.0" layoutY="341.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #5c6f37;" text="Back" textFill="#e1e1e1" />
 </AnchorPane>

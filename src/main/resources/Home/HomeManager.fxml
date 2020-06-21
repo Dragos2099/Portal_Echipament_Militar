@@ -1,22 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.home.HomeManager">
-    <Label layoutX="63.0" layoutY="25.0" text="Home Manager">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #444a37;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.home.HomeManager">
+    <ImageView fitHeight="500.0" fitWidth="334.0" layoutX="379.0" opacity="0.82" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../images/19.jpg"/>
+    </ImageView>
+    <Label layoutX="65.0" layoutY="24.0" text="Home Manager" textFill="#e6ddbe">
         <font>
-            <Font size="24.0"/>
+            <Font name="Copperplate Gothic Bold" size="27.0" />
         </font>
     </Label>
-    <Button fx:id="SIGN_OUT" layoutX="496.0" layoutY="330.0" mnemonicParsing="false" onAction="#SignOut"
-            text="Sign out"/>
-    <Button layoutX="442.0" layoutY="283.0" mnemonicParsing="false" onAction="#scmb_parola" text="Schimbare parola"/>
-    <Button layoutX="91.0" layoutY="137.0" mnemonicParsing="false" onAction="#afis_cereri" text="Afisare cereri"/>
-    <Button layoutX="91.0" layoutY="190.0" mnemonicParsing="false" onAction="#add_cerere" text="Adaugare cerere"/>
-    <Button layoutX="90.0" layoutY="247.0" mnemonicParsing="false" onAction="#edit_cerere" text="Editare cerere"/>
-    <Button layoutX="92.0" layoutY="305.0" mnemonicParsing="false" onAction="#sterge_cerere" text="Sterge cerere"/>
-    <Button layoutX="89.0" layoutY="90.0" mnemonicParsing="false" onAction="#viz_oferte" text="Vizualizare oferte"/>
+    <Button layoutX="428.0" layoutY="428.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="25.0" prefWidth="223.0" style="-fx-background-color: #444a37;" text="Sign out" textFill="#e6ddbe">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="428.0" layoutY="384.0" mnemonicParsing="false" onAction="#scmb_parola" prefHeight="25.0" prefWidth="223.0" style="-fx-background-color: #444a37;" text="Schimbare parola" textFill="#e6ddbe">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="43.0" layoutY="145.0" mnemonicParsing="false" onAction="#afis_cereri" prefHeight="25.0" prefWidth="272.0" style="-fx-background-color: #e6ddbe;" text="Afisare cereri">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="43.0" layoutY="203.0" mnemonicParsing="false" onAction="#add_cerere" prefHeight="25.0" prefWidth="272.0" style="-fx-background-color: #e6ddbe;" text="Adaugare cerere">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="43.0" layoutY="259.0" mnemonicParsing="false" onAction="#edit_cerere" prefHeight="25.0" prefWidth="272.0" style="-fx-background-color: #e6ddbe;" text="Editare cerere">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="43.0" layoutY="316.0" mnemonicParsing="false" onAction="#sterge_cerere" prefHeight="25.0" prefWidth="272.0" style="-fx-background-color: #e6ddbe;" text="Sterge cerere">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="43.0" layoutY="90.0" mnemonicParsing="false" onAction="#viz_oferte" prefHeight="25.0" prefWidth="272.0" style="-fx-background-color: #e6ddbe;" text="Vizualizare oferte">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
 </AnchorPane>

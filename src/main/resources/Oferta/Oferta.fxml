@@ -1,25 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="490.0" prefWidth="362.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.Offer">
-    <Text layoutX="87.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creare oferta">
+<AnchorPane opacity="0.98" prefHeight="490.0" prefWidth="362.0" style="-fx-background-color: #293621;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.Offer">
+    <ImageView fitHeight="490.0" fitWidth="362.0" layoutY="4.0" opacity="0.17" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../images/20.jpg"/>
+    </ImageView>
+    <Text fill="#99a395" layoutX="10.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Creare oferta">
         <font>
-            <Font size="32.0"/>
+            <Font name="Copperplate Gothic Bold" size="41.0" />
         </font>
     </Text>
-    <Text layoutX="14.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Echipament"/>
-    <Text layoutX="14.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bucati"/>
-    <Button layoutX="65.0" layoutY="416.0" mnemonicParsing="false" onAction="#Creare" text="Creare"/>
-    <Button layoutX="249.0" layoutY="416.0" mnemonicParsing="false" onAction="#Anulare" text="Anulare"/>
-    <TextField fx:id="Echipament" layoutX="159.0" layoutY="93.0"/>
-    <TextField fx:id="Bucati" layoutX="159.0" layoutY="156.0"/>
-    <Text fx:id="Mesaj" layoutX="131.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="101.0"/>
-    <Text layoutX="19.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pret"/>
-    <Text layoutX="19.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data"/>
-    <TextField fx:id="Pret" layoutX="159.0" layoutY="224.0"/>
-    <DatePicker fx:id="Date" layoutX="147.0" layoutY="286.0"/>
+    <Button layoutX="20.0" layoutY="416.0" mnemonicParsing="false" onAction="#Creare" prefHeight="25.0" prefWidth="121.0" style="-fx-background-color: #809174;" text="Creare" textFill="#e1e0e0">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="218.0" layoutY="416.0" mnemonicParsing="false" onAction="#Anulare" prefHeight="25.0" prefWidth="121.0" style="-fx-background-color: #809174;" text="Anulare" textFill="#dddddd">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <TextField fx:id="Echipament" layoutX="157.0" layoutY="120.0" prefHeight="25.0" prefWidth="152.0" promptText="echipament" style="-fx-background-color: #809174;" />
+    <TextField fx:id="Bucati" layoutX="157.0" layoutY="183.0" prefHeight="25.0" prefWidth="152.0" promptText="bucati" style="-fx-background-color: #809174;" />
+    <Text fx:id="Mesaj" layoutX="131.0" layoutY="374.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="101.0" />
+    <TextField fx:id="Pret" layoutX="157.0" layoutY="251.0" prefHeight="25.0" prefWidth="152.0" promptText="pret" style="-fx-background-color: #809174;" />
+    <DatePicker fx:id="Date" layoutX="157.0" layoutY="314.0" prefHeight="25.0" prefWidth="152.0" promptText="data" style="-fx-background-color: #809174;" />
+   <Text fill="#a4a4a4" layoutX="32.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Echipament">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Text>
+   <Text fill="#a4a4a4" layoutX="45.0" layoutY="202.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bucati">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Text>
+   <Text fill="#a4a4a4" layoutX="54.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pret">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Text>
+   <Text fill="#a4a4a4" layoutX="51.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Text>
 </AnchorPane>

@@ -1,24 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.editare.TableOferteEditare">
-    <TableView fx:id="TableView" layoutX="36.0" layoutY="111.0" prefHeight="200.0" prefWidth="511.0">
-      <columns>
-          <TableColumn fx:id="Echipament" onEditCommit="#changeEchipament" prefWidth="186.0" text="Echipament" />
-          <TableColumn fx:id="Bucati" onEditCommit="#changeBucati" prefWidth="75.0" text="Bucati" />
-          <TableColumn fx:id="Pret" onEditCommit="#changePret" prefWidth="62.0" text="Pret" />
-          <TableColumn fx:id="Data" onEditCommit="#changeData" prefWidth="89.0" text="Data" />
-          <TableColumn fx:id="Stare" onEditCommit="#changeStare" prefWidth="98.0" text="Stare" />
-      </columns>
-    </TableView>
-    <Text layoutX="200.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afisare oferte">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #7f856d;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.editare.TableOferteEditare">
+    <ImageView fitHeight="343.0" fitWidth="600.0" layoutX="-1.0" layoutY="85.0" opacity="0.59" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../images/13.png"/>
+    </ImageView>
+    <Text layoutX="169.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Editare oferte">
         <font>
-          <Font size="31.0" />
+            <Font name="Copperplate Gothic Bold" size="31.0" />
         </font>
     </Text>
-   <Button layoutX="173.0" layoutY="344.0" mnemonicParsing="false" onAction="#Salvare" text="Salvare" />
-   <Button layoutX="357.0" layoutY="344.0" mnemonicParsing="false" onAction="#Anulare" text="Anulare" />
+    <TableView fx:id="TableView" layoutX="36.0" layoutY="111.0" opacity="0.95" prefHeight="200.0" prefWidth="511.0" style="-fx-background-color: #7f856d;">
+        <columns>
+            <TableColumn fx:id="Echipament" onEditCommit="#changeEchipament" prefWidth="186.0" text="Echipament" />
+            <TableColumn fx:id="Bucati" onEditCommit="#changeBucati" prefWidth="75.0" text="Bucati" />
+            <TableColumn fx:id="Pret" onEditCommit="#changePret" prefWidth="62.0" text="Pret" />
+            <TableColumn fx:id="Data" onEditCommit="#changeData" prefWidth="89.0" text="Data" />
+            <TableColumn fx:id="Stare" onEditCommit="#changeStare" prefWidth="98.0" text="Stare" />
+        </columns>
+    </TableView>
+    <Button layoutX="357.0" layoutY="344.0" mnemonicParsing="false" onAction="#Anulare" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: #7f856d;" text="Anulare">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="60.0" layoutY="344.0" mnemonicParsing="false" onAction="#Salvare" prefHeight="25.0" prefWidth="167.0" style="-fx-background-color: #7f856d;" text="Salvare">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
 </AnchorPane>

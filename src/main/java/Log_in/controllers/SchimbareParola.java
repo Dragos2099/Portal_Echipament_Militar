@@ -40,36 +40,40 @@ public class SchimbareParola {
         String username = UsernameField.getText();
         String oldpassword = OldPasswordField.getText();
         String newpassword = NewPasswordField.getText();
-        if (username == null || username.isEmpty()) {
+        if (Objects.equals(username,"") || username.isEmpty() ) {
             ChangeMessage.setText("E-mail invalid");
-            return;
-        } if (oldpassword == null || oldpassword.isEmpty()) {
+        }   else
+       if (Objects.equals(oldpassword,"") || oldpassword.isEmpty() ) {
             ChangeMessage.setText("Parola introdusa este gresita");
-            return;
         }
-        if (!Files.exists(USERS_PATH)) {
-            FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), USERS_PATH.toFile());
-        }
+       else
+       if (Objects.equals(newpassword,"") || newpassword.isEmpty())  {
+           ChangeMessage.setText("Introduceti o parola noua!");
+       }else {
+           if (!Files.exists(USERS_PATH)) {
+               FileUtils.copyURLToFile(Objects.requireNonNull(UserService.class.getClassLoader().getResource("users.json")), USERS_PATH.toFile());
+           }
 
-        ObjectMapper objectMapper = new ObjectMapper();
-        users = objectMapper.readValue(USERS_PATH.toFile(), new TypeReference<List<User>>() {
-        });
+           ObjectMapper objectMapper = new ObjectMapper();
+           users = objectMapper.readValue(USERS_PATH.toFile(), new TypeReference<List<User>>() {
+           });
 
-        for (User user : users) {
-            String pws=Criptare.decrypt(user.getPassword(),user.getUsername());
-            if(Objects.equals(username,user.getUsername()) && Objects.equals(pws,oldpassword)){
-                ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
-                user.setPassword(Criptare.encrypt(newpassword,username));
-                persistUsers();
-                Parent Log_in = FXMLLoader.load(getClass().getResource("/Schimbare_Parola/SchimbareParolaSuccess.fxml"));
-                Stage stage =new Stage() ;
-                stage.setTitle("Portal Echipament Militar");
-                Scene scene = new Scene(Log_in, 350, 200);
-                stage.setScene(scene);
-                stage.show();
-                return;
-            }
-        }
+           for (User user : users) {
+               String pws = Criptare.decrypt(user.getPassword(), user.getUsername());
+               if (Objects.equals(username, user.getUsername()) && Objects.equals(pws, oldpassword)) {
+                   ((Node) (actionEvent.getSource())).getScene().getWindow().hide();
+                   user.setPassword(Criptare.encrypt(newpassword, username));
+                   persistUsers();
+                   Parent Log_in = FXMLLoader.load(getClass().getResource("/Schimbare_Parola/SchimbareParolaSuccess.fxml"));
+                   Stage stage = new Stage();
+                   stage.setTitle("Portal Echipament Militar");
+                   Scene scene = new Scene(Log_in, 350, 200);
+                   stage.setScene(scene);
+                   stage.show();
+                   return;
+               }
+           }
+       }
         ChangeMessage.setText("Date incorecte!");
     }
 
@@ -81,5 +85,9 @@ public class SchimbareParola {
         } catch (IOException e) {
             throw new CouldNotWriteUserException();
         }
+    }
+
+    public void back(ActionEvent actionEvent) {
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
     }
 }

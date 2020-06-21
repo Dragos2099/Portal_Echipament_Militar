@@ -1,21 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.home.HomeFurnizor">
-    <Label layoutX="63.0" layoutY="25.0" text="Home Furnizor">
+<AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #373a4a;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.home.HomeFurnizor">
+    <ImageView fitHeight="500.0" fitWidth="414.0" layoutX="366.0" layoutY="1.0" opacity="0.67" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../images/17.jpg"/>
+    </ImageView>
+    <Label layoutX="39.0" layoutY="26.0" text="Home Furnizor" textFill="#787d86">
         <font>
-            <Font size="24.0"/>
+            <Font name="Copperplate Gothic Bold" size="33.0" />
         </font>
     </Label>
-    <Button fx:id="SIGN_OUT" layoutX="496.0" layoutY="330.0" mnemonicParsing="false" onAction="#SignOut"
-            text="Sign out"/>
-    <Button layoutX="442.0" layoutY="283.0" mnemonicParsing="false" onAction="#scmb_parola" text="Schimbare parola"/>
-    <Button layoutX="98.0" layoutY="90.0" mnemonicParsing="false" onAction="#afis_cereri" text="Afisare cereri"/>
-    <Button layoutX="98.0" layoutY="143.0" mnemonicParsing="false" onAction="#add_oferta" text="Creare oferta"/>
-    <Button layoutX="97.0" layoutY="200.0" mnemonicParsing="false" onAction="#edit_oferta" text="Editare oferta"/>
-    <Button layoutX="99.0" layoutY="258.0" mnemonicParsing="false" onAction="#sterge_oferta" text="Sterge oferta"/>
+    <Button layoutX="33.0" layoutY="109.0" mnemonicParsing="false" onAction="#afis_cereri" prefHeight="29.0" prefWidth="292.0" style="-fx-background-color: #787d86;" text="Afisare cereri" textFill="#252732">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="33.0" layoutY="192.0" mnemonicParsing="false" onAction="#add_oferta" prefHeight="29.0" prefWidth="292.0" style="-fx-background-color: #787d86;" text="Creare oferta" textFill="#252732">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="33.0" layoutY="281.0" mnemonicParsing="false" onAction="#edit_oferta" prefHeight="29.0" prefWidth="292.0" style="-fx-background-color: #787d86;" text="Editare oferta" textFill="#252732">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="33.0" layoutY="369.0" mnemonicParsing="false" onAction="#sterge_oferta" prefHeight="29.0" prefWidth="292.0" style="-fx-background-color: #787d86;" text="Sterge oferta" textFill="#252732">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="402.0" layoutY="266.0" mnemonicParsing="false" onAction="#scmb_parola" prefHeight="25.0" prefWidth="262.0" style="-fx-background-color: #2c2f3c;" text="Schimbare parola" textFill="#979eab">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
+    <Button layoutX="402.0" layoutY="302.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="25.0" prefWidth="262.0" style="-fx-background-color: #2c2f3c;" text="Sign out" textFill="#979eab">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
 </AnchorPane>

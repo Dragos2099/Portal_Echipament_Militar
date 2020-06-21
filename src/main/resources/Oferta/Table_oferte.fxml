@@ -1,24 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.afisare.TableOferte">
-    <TableView fx:id="TableView" layoutX="36.0" layoutY="111.0" prefHeight="200.0" prefWidth="511.0">
-      <columns>
-          <TableColumn fx:id="Echipament" prefWidth="186.0" text="Echipament" />
-          <TableColumn fx:id="Bucati" prefWidth="75.0" text="Bucati" />
-          <TableColumn fx:id="Pret" prefWidth="62.0" text="Pret" />
-          <TableColumn fx:id="Data" prefWidth="89.0" text="Data" />
-          <TableColumn fx:id="Stare" prefWidth="98.0" text="Stare" />
-      </columns>
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #72876f;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.afisare.TableOferte">
+    <ImageView fitHeight="411.0" fitWidth="600.0" layoutY="6.0" opacity="0.32" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../images/15.jpg"/>
+    </ImageView>
+    <TableView fx:id="TableView" layoutX="36.0" layoutY="111.0" opacity="0.83" prefHeight="200.0" prefWidth="511.0" style="-fx-background-color: #72876f;">
+        <columns>
+            <TableColumn fx:id="Echipament" prefWidth="186.0" text="Echipament" />
+            <TableColumn fx:id="Bucati" prefWidth="75.0" text="Bucati" />
+            <TableColumn fx:id="Pret" prefWidth="62.0" text="Pret" />
+            <TableColumn fx:id="Data" prefWidth="89.0" text="Data" />
+            <TableColumn fx:id="Stare" prefWidth="98.0" text="Stare" />
+        </columns>
     </TableView>
-    <Text layoutX="200.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afisare oferte">
+    <Text layoutX="105.0" layoutY="77.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Afisare oferte">
         <font>
-          <Font size="31.0" />
+            <Font name="Copperplate Gothic Bold" size="46.0" />
         </font>
     </Text>
-    <Button layoutX="166.0" layoutY="335.0" mnemonicParsing="false" onAction="#Accept" text="Acceptare" />
-    <Button layoutX="345.0" layoutY="335.0" mnemonicParsing="false" onAction="#Deny" text="Respingere" />
+    <Button layoutX="166.0" layoutY="335.0" mnemonicParsing="false" onAction="#Accept" style="-fx-background-color: #3b473c;" text="Acceptare" textFill="#e1dede" />
+    <Button layoutX="345.0" layoutY="335.0" mnemonicParsing="false" onAction="#Deny" style="-fx-background-color: #3b473c;" text="Respingere" textFill="#ebe3e3" />
 </AnchorPane>

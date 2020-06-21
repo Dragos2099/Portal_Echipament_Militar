@@ -1,42 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Blend?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<GridPane xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
-          fx:controller="Log_in.controllers.Login">
+<GridPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.controllers.Login">
    <columnConstraints>
-      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0"/>
+      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
    </columnConstraints>
    <rowConstraints>
-      <RowConstraints minHeight="10.0" vgrow="SOMETIMES"/>
+      <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
    </rowConstraints>
-   <AnchorPane prefHeight="500.0" prefWidth="700.0">
+   <AnchorPane prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #2e541d;">
       <cursor>
-         <Cursor fx:constant="CROSSHAIR"/>
+         <Cursor fx:constant="CROSSHAIR" />
       </cursor>
-      <TextField fx:id="usernameField" layoutX="275.0" layoutY="180.0"/>
-      <PasswordField fx:id="passwordField" layoutX="275.0" layoutY="230.0"/>
-      <Button fx:id="btn_msg" ellipsisString="" layoutX="302.0" layoutY="294.0" mnemonicParsing="false"
-              onAction="#pressButton" prefHeight="25.0" prefWidth="96.0" text="Log In" textOverrun="CENTER_ELLIPSIS">
+      <ImageView fitHeight="506.0" fitWidth="310.0" opacity="0.57" pickOnBounds="true" preserveRatio="true">
+         <Image url="@../images/4.jpg"/>
+      </ImageView>
+      <TextField fx:id="usernameField" layoutX="332.0" layoutY="180.0" opacity="0.67" prefHeight="25.0" prefWidth="305.0" promptText="username" style="-fx-background-color: #70af42;">
          <effect>
-            <Blend mode="LIGHTEN"/>
+            <ColorAdjust brightness="-0.03" contrast="0.12" />
          </effect>
-      </Button>
-      <Label layoutX="191.0" layoutY="184.0" text="E-mail"/>
-      <Label layoutX="191.0" layoutY="234.0" text="Parola"/>
-      <Label layoutX="47.0" layoutY="36.0" text="Portal Echipament Militar" textFill="#62b242"
-             AnchorPane.topAnchor="36.0">
          <font>
-            <Font name="Copperplate Gothic Bold" size="40.0"/>
+            <Font size="13.0" />
+         </font></TextField>
+      <PasswordField fx:id="passwordField" layoutX="332.0" layoutY="230.0" opacity="0.73" prefHeight="25.0" prefWidth="305.0" promptText="parola" style="-fx-background-color: #70af42;">
+         <effect>
+            <ColorAdjust brightness="-0.03" contrast="0.12" />
+         </effect>
+         <font>
+            <Font size="13.0" />
+         </font></PasswordField>
+      <Button fx:id="btn_msg" ellipsisString="" layoutX="375.0" layoutY="362.0" mnemonicParsing="false" onAction="#pressButton" prefHeight="16.0" prefWidth="220.0" style="-fx-background-color: #14280a;" text="Log In" textFill="#bcd69c" textOverrun="CENTER_ELLIPSIS">
+         <effect>
+            <Blend mode="LIGHTEN" />
+         </effect>
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="277.0" layoutY="55.0" prefHeight="45.0" prefWidth="382.0" text="hipament Militar" textFill="#14280a" AnchorPane.topAnchor="55.0">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="40.0" />
          </font>
       </Label>
-      <Text fx:id="loginMessage" layoutX="250.0" layoutY="400.0" strokeType="OUTSIDE" strokeWidth="0.0"
-            wrappingWidth="200.13671875"/>
-      <Button fx:id="btn_reg" layoutX="47.0" layoutY="362.0" mnemonicParsing="false" onAction="#register"
-              text="Inregistrare"/>
+      <Text fx:id="loginMessage" fill="#daebcb" layoutX="36.0" layoutY="432.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="200.13671875">
+         <font>
+            <Font size="22.0" />
+         </font></Text>
+      <Button fx:id="btn_reg" layoutX="595.0" layoutY="452.0" mnemonicParsing="false" onAction="#register" style="-fx-background-color: #14280a;" text="Inregistrare" textFill="#aac397">
+         <font>
+            <Font size="14.0" />
+         </font></Button>
+      <Label layoutX="51.0" layoutY="55.0" text="Portal Ec" textFill="#5dab27">
+         <font>
+            <Font name="Copperplate Gothic Bold" size="40.0" />
+         </font>
+      </Label>
    </AnchorPane>
 </GridPane>
