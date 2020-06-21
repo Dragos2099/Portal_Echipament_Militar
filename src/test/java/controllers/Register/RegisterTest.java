@@ -57,13 +57,15 @@ public class RegisterTest extends  ApplicationTest{
 
     @Test
     public void testHandleAddUserActionCode() {
+        controller.role.setValue("Administrator");
         controller.handleRegisterAction();
         assertEquals(1, UserService.getUsers().size());
-        assertEquals("Account created successfully!", controller.registrationMessage.getText());
+        assertEquals("Contul a fost creat!", controller.registrationMessage.getText());
     }
 
     @Test
     public void testAddSameUserTwice() {
+        controller.role.setValue("Administrator");
         controller.handleRegisterAction();
         controller.handleRegisterAction();
         assertEquals("Numele " + TEST_USER + " este deja folosit", controller.registrationMessage.getText());

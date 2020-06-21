@@ -48,6 +48,7 @@ public class RegisterAdmTest extends ApplicationTest {
 
     @Test
     public void testHandleAddUserActionCode() {
+        controller.role.setValue("Administrator");
         controller.handleRegisterAction();
         assertEquals(1, UserService.getUsers().size());
         assertEquals("Contul a fost creat!", controller.registrationMessage.getText());
@@ -55,6 +56,7 @@ public class RegisterAdmTest extends ApplicationTest {
 
     @Test
     public void testAddSameUserTwice() {
+        controller.role.setValue("Administrator");
         controller.handleRegisterAction();
         controller.handleRegisterAction();
         assertEquals("Numele " + TEST_USER + " este deja folosit", controller.registrationMessage.getText());
