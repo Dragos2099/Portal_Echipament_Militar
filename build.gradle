@@ -50,7 +50,9 @@ jar {
     }
     exclude 'META-INF/*.RSA', 'META-INF/*.SF', 'META-INF/*.DSA'
     manifest {
-        attributes 'Main-Class': 'Main'
+        attributes 'Main-Class': 'JavaFXMainClass'
     }
+
+    archiveName="PEM.jar"
 }
 
