@@ -35,12 +35,12 @@
          <Font name="System Bold" size="18.0" />
       </font>
    </Text>
-   <Text layoutX="48.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bucati">
+   <Text layoutX="41.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bucati">
       <font>
          <Font name="System Bold" size="18.0" />
       </font>
    </Text>
-   <Text layoutX="54.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data">
+   <Text layoutX="39.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Urgent">
       <font>
          <Font name="System Bold" size="18.0" />
       </font>

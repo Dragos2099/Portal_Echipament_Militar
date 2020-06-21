@@ -1,35 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #6a785d;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.sterge.TableOferte_sterge">
-    <ImageView fitHeight="401.0" fitWidth="406.0" layoutX="332.0" opacity="0.18" pickOnBounds="true"
-               preserveRatio="true">
-        <Image url="@../images/26.jpg"/>
-    </ImageView>
-    <Text fill="#14390f" layoutX="75.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stergere oferte">
-        <font>
-            <Font name="Copperplate Gothic Bold" size="46.0" />
-        </font>
-    </Text>
-    <TableView fx:id="TableView" layoutX="36.0" layoutY="111.0" opacity="0.66" prefHeight="200.0" prefWidth="511.0" style="-fx-background-color: #9da887;">
+<AnchorPane prefHeight="400.0" prefWidth="345.0" style="-fx-background-color: #315731;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cerere.controllers.sterge.TableCereri_sterge">
+    <TableView fx:id="TableView" layoutX="56.0" layoutY="92.0" opacity="0.73" prefHeight="216.0" prefWidth="234.0">
         <columns>
-            <TableColumn fx:id="Echipament" prefWidth="186.0" text="Echipament" />
+            <TableColumn fx:id="Echipament" prefWidth="75.0" text="Echipament" />
             <TableColumn fx:id="Bucati" prefWidth="75.0" text="Bucati" />
-            <TableColumn fx:id="Pret" prefWidth="62.0" text="Pret" />
-            <TableColumn fx:id="Data" prefWidth="89.0" text="Data" />
-            <TableColumn fx:id="Stare" prefWidth="98.0" text="Stare" />
+            <TableColumn fx:id="Urgent" prefWidth="83.0" text="Urgent" />
         </columns>
     </TableView>
-    <Button layoutX="363.0" layoutY="335.0" mnemonicParsing="false" onAction="#Anulare" prefHeight="29.0" prefWidth="168.0" style="-fx-background-color: #9da887;" text="Anulare" textFill="#14390f">
+    <Text fill="#849e52" layoutX="135.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cereri">
         <font>
-            <Font size="13.0" />
-        </font></Button>
-    <Button layoutX="56.0" layoutY="335.0" mnemonicParsing="false" onAction="#Sterge" prefHeight="29.0" prefWidth="168.0" style="-fx-background-color: #9da887;" text="Sterge" textFill="#14390f">
-        <font>
-            <Font size="13.0" />
-        </font></Button>
+            <Font size="29.0" />
+        </font>
+    </Text>
+    <Button layoutX="56.0" layoutY="346.0" mnemonicParsing="false" onAction="#Sterge" style="-fx-background-color: #849e52;" text="Sterge" textFill="WHITE" />
+    <Button layoutX="238.0" layoutY="346.0" mnemonicParsing="false" onAction="#Anulare" style="-fx-background-color: #849e52;" text="Anulare" textFill="WHITE" />
 </AnchorPane>
