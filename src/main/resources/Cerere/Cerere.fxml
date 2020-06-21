@@ -6,9 +6,8 @@
 <?import javafx.scene.text.*?>
 
 <AnchorPane prefHeight="400.0" prefWidth="360.0" style="-fx-background-color: #455c36;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cerere.controllers.Cerere">
-   <ImageView fitHeight="400.0" fitWidth="226.0" layoutX="138.0" opacity="0.49" pickOnBounds="true"
-              preserveRatio="true">
-      <Image url="@../images/18.jpg"/>
+   <ImageView fitHeight="400.0" fitWidth="226.0" layoutX="138.0" opacity="0.49" pickOnBounds="true" preserveRatio="true">
+      <Image url="@../images/18.jpg" />
    </ImageView>
    <Text layoutX="-6.0" layoutY="42.0" opacity="0.87" strokeType="OUTSIDE" strokeWidth="0.0" text="Creare Cerere" textAlignment="CENTER" wrappingWidth="148.0">
       <font>
@@ -16,9 +15,9 @@
       </font>
    </Text>
    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-   <TextField fx:id="Echipament" layoutX="45.0" layoutY="116.0" opacity="0.8" prefHeight="25.0" prefWidth="270.0" style="-fx-background-color: #aac499;" />
-   <TextField fx:id="Bucati" layoutX="45.0" layoutY="175.0" opacity="0.8" prefHeight="25.0" prefWidth="270.0" style="-fx-background-color: #aac499;" />
-   <ChoiceBox fx:id="Urgent" layoutX="45.0" layoutY="231.0" opacity="0.8" prefHeight="25.0" prefWidth="270.0" style="-fx-background-color: #aac499;" />
+   <TextField fx:id="Echipament" layoutX="136.0" layoutY="116.0" opacity="0.8" prefHeight="25.0" prefWidth="179.0" promptText="Echipamente" style="-fx-background-color: #aac499;" />
+   <TextField fx:id="Bucati" layoutX="136.0" layoutY="175.0" opacity="0.8" prefHeight="25.0" prefWidth="179.0" promptText="Bucati" style="-fx-background-color: #aac499;" />
+   <ChoiceBox fx:id="Urgent" layoutX="136.0" layoutY="231.0" opacity="0.8" prefHeight="25.0" prefWidth="179.0" style="-fx-background-color: #aac499;" />
    <Button layoutX="14.0" layoutY="353.0" mnemonicParsing="false" onAction="#Creare" opacity="0.8" prefHeight="25.0" prefWidth="120.0" style="-fx-background-color: #aac499;" text="Creare">
       <font>
          <Font size="13.0" />
@@ -31,4 +30,19 @@
       <font>
          <Font size="18.0" />
       </font></Text>
+   <Text layoutX="18.0" layoutY="135.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Echipament">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Text>
+   <Text layoutX="48.0" layoutY="194.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Bucati">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Text>
+   <Text layoutX="54.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Data">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+   </Text>
 </AnchorPane>
