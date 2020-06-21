@@ -56,4 +56,8 @@ public class ContractsService {
                 throw new ContractAlreadyExistsException();
         }
     }
+
+    public static List<Contracts> getContracts() {
+        return contracts;
+    }
 }

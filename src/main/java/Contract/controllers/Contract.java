@@ -62,7 +62,7 @@ public class Contract {
 
         persistOferte();
 
-        if(Objects.equals(buc.getText(),"") || Objects.equals(total.getText(),"") || Objects.equals(ec.getText(),"") || date.getValue()==null || Objects.equals(nr_f.getText(),"")|| Objects.equals(nr_mil.getText(),""))
+        if(Objects.equals(buc.getText(),"") || Objects.equals(total.getText(),"") || Objects.equals(ec.getText(),"") || Objects.equals(date.getValue(),null) || Objects.equals(nr_f.getText(),"")|| Objects.equals(nr_mil.getText(),""))
             eroare.setText("Completati toate campurile !");
 
         try {
