@@ -1,51 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<GridPane alignment="center" hgap="10" prefHeight="400" prefWidth="600" vgap="10" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Register.controllers.Register">
-    <padding>
-        <Insets bottom="25.0" left="25.0" right="25.0" top="25.0" />
-    </padding>
-    <Text id="title-text" text="PEM INREGISTRARE" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="0">
-      <font>
-         <Font size="29.0" />
-      </font></Text>
+<AnchorPane opacity="0.89" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: #196673;"
+            xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="Register.controllers.Register">
+    <ImageView fitHeight="500.0" fitWidth="294.0" layoutX="418.0" opacity="0.56" pickOnBounds="true"
+               preserveRatio="true">
+        <image>
+            <Image url="@../images/3.jpg"/>
+        </image>
+    </ImageView>
+    <Text id="title-text" fill="#0f3940" fontSmoothingType="LCD" layoutY="62.0" text="PEM INREGISTRARE"
+          textAlignment="CENTER" wrappingWidth="383.60302734375">
+        <font>
+            <Font name="Copperplate Gothic Bold" size="30.0"/>
+        </font>
+    </Text>
 
-    <Label text="E-mail" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="usernameField" layoutX="73.0" layoutY="103.0" prefHeight="25.0" prefWidth="237.0"
+               promptText="username" style="-fx-background-color: #5c9096;"/>
 
-    <TextField fx:id="usernameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+    <PasswordField fx:id="passwordField" layoutX="73.0" layoutY="150.0" prefHeight="25.0" prefWidth="237.0"
+                   promptText="parola" style="-fx-background-color: #5c9096;"/>
 
-    <Label text="Parola" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-
-    <Label text="Rol:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-
-    <ChoiceBox fx:id="role" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+    <ChoiceBox fx:id="role" layoutX="73.0" layoutY="200.0" prefHeight="25.0" prefWidth="237.0"
+               style="-fx-background-color: #5c9096;">
     </ChoiceBox>
 
-    <Text fx:id="registrationMessage" wrappingWidth="145.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-    <HBox alignment="bottom_right" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="5">
-        <Button onAction="#handleRegisterAction" text="Inregistrare" />
-    </HBox>
-   <Button fx:id="back" mnemonicParsing="false" onAction="#back" text="Inapoi" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-   <columnConstraints>
-      <ColumnConstraints />
-      <ColumnConstraints />
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
-</GridPane>
+    <Text fx:id="registrationMessage" fill="#0c3136" layoutX="7.0" layoutY="341.0" textAlignment="CENTER"
+          wrappingWidth="370.0">
+        <font>
+            <Font size="20.0"/>
+        </font>
+    </Text>
+    <Button fx:id="back" layoutX="621.0" layoutY="6.0" mnemonicParsing="false" onAction="#back" prefHeight="25.0"
+            prefWidth="71.0" style="-fx-background-color: #5c9096;" text="Inapoi" textFill="#0c3439">
+        <font>
+            <Font size="13.0"/>
+        </font>
+    </Button>
+    <Button layoutX="109.0" layoutY="273.0" onAction="#handleRegisterAction" opacity="0.89" prefHeight="25.0"
+            prefWidth="165.0" style="-fx-background-color: #103f47;" text="Inregistrare" textFill="#d7d5c7"/>
+</AnchorPane>
