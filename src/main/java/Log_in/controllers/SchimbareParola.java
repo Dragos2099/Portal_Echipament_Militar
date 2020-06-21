@@ -48,7 +48,7 @@ public class SchimbareParola {
             return;
         }
         if (!Files.exists(USERS_PATH)) {
-            FileUtils.copyURLToFile(UserService.class.getClassLoader().getResource("users.json"), USERS_PATH.toFile());
+            FileUtils.copyURLToFile(Objects.requireNonNull(UserService.class.getClassLoader().getResource("users.json")), USERS_PATH.toFile());
         }
 
         ObjectMapper objectMapper = new ObjectMapper();
@@ -81,5 +81,9 @@ public class SchimbareParola {
         } catch (IOException e) {
             throw new CouldNotWriteUserException();
         }
+    }
+
+    public void back(ActionEvent actionEvent) {
+        ((Node)(actionEvent.getSource())).getScene().getWindow().hide();
     }
 }

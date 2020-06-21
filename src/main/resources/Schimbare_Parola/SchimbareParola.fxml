@@ -7,9 +7,7 @@
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #807839;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Log_in.controllers.SchimbareParola">
    <ImageView fitHeight="400.0" fitWidth="348.0" opacity="0.45" pickOnBounds="true" preserveRatio="true">
-      <image>
-         <Image url="@../images/11.jpg" />
-      </image>
+      <Image url="@../images/11.jpg"/>
    </ImageView>
    <Text fill="#3c4029" layoutX="122.0" layoutY="67.0" opacity="0.89" strokeType="OUTSIDE" strokeWidth="0.0" text="Schimbare parola">
       <font>
@@ -24,4 +22,5 @@
       <font>
          <Font size="20.0" />
       </font></Text>
+   <Button layoutX="508.0" layoutY="341.0" mnemonicParsing="false" onAction="#back" style="-fx-background-color: #5c6f37;" text="Back" textFill="#e1e1e1" />
 </AnchorPane>

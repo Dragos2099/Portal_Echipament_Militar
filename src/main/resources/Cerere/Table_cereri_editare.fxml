@@ -1,22 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cerere.controllers.editare.TableCereriEditare">
-    <TableView fx:id="TableView" layoutX="56.0" layoutY="92.0" prefHeight="216.0" prefWidth="234.0">
+<AnchorPane prefHeight="400.0" prefWidth="345.0" style="-fx-background-color: #6b7051;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Cerere.controllers.editare.TableCereriEditare">
+    <ImageView fitHeight="321.0" fitWidth="345.0" layoutY="79.0" opacity="0.5" pickOnBounds="true" preserveRatio="true">
+        <Image url="@../images/6.jpg"/>
+    </ImageView>
+    <TableView fx:id="TableView" layoutX="56.0" layoutY="92.0" opacity="0.65" prefHeight="216.0" prefWidth="234.0" style="-fx-background-color: #ddca92;">
         <columns>
             <TableColumn fx:id="Echipament" onEditCommit="#changeEchipament" prefWidth="75.0" text="Echipament" />
             <TableColumn fx:id="Bucati" onEditCommit="#changeBuc" prefWidth="75.0" text="Bucati" />
             <TableColumn fx:id="Urgent" onEditCommit="#changeUrgenta" prefWidth="83.0" text="Urgent" />
         </columns>
     </TableView>
-    <Text layoutX="135.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cereri">
+    <Text fill="#b9b586" layoutX="107.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cereri">
         <font>
-            <Font size="29.0" />
+            <Font name="Copperplate Gothic Bold" size="35.0" />
         </font>
     </Text>
-    <Button layoutX="56.0" layoutY="346.0" mnemonicParsing="false" onAction="#Salvare" text="Salvare" />
-    <Button layoutX="238.0" layoutY="346.0" mnemonicParsing="false" onAction="#Anulare" text="Anulare" />
+    <Button layoutX="28.0" layoutY="346.0" mnemonicParsing="false" onAction="#Salvare" prefHeight="25.0" prefWidth="107.0" style="-fx-background-color: #464a33;" text="Salvare" textFill="#d7cea6" />
+    <Button layoutX="210.0" layoutY="346.0" mnemonicParsing="false" onAction="#Anulare" prefHeight="25.0" prefWidth="107.0" style="-fx-background-color: #464a33;" text="Anulare" textFill="#ddca92" />
 </AnchorPane>

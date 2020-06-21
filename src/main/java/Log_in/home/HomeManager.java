@@ -78,7 +78,7 @@ public class HomeManager {
         Parent Log_in = FXMLLoader.load(getClass().getResource("/Cerere/Table_cereri_sterge.fxml"));
         Stage stage =new Stage() ;
         stage.setTitle("Portal Echipament Militar");
-        Scene scene = new Scene(Log_in, 360, 400);
+        Scene scene = new Scene(Log_in, 600, 400);
         stage.setScene(scene);
         stage.show();
     }
