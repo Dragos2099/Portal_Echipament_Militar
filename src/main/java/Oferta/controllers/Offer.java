@@ -34,7 +34,7 @@ public class Offer {
 
     }
 
-    public void Creare(ActionEvent actionEvent)  {
+    public void Creare()  {
         String s="Asteptare";
 
         if(Objects.equals(Echipament.getText(),"") || Objects.equals(Bucati.getText(),"") || Objects.equals(Pret.getText(),"") || Date.getValue()==null)

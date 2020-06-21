@@ -17,22 +17,22 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Register {
-    @FXML
-    private Text registrationMessage;
-    @FXML
-    private PasswordField passwordField;
-    @FXML
-    private TextField usernameField;
-    @FXML
-    private ChoiceBox role;
 
-    @FXML
+    public Text registrationMessage;
+
+    public PasswordField passwordField;
+
+    public TextField usernameField;
+
+    public ChoiceBox role;
+
+
     public void initialize() {
         role.getItems().addAll("Administrator", "Manager","Furnizor");
     }
 
 
-    public void handleRegisterAction(ActionEvent actionEvent) {
+    public void handleRegisterAction() {
         try {
             UserService.addUser(usernameField.getText(), passwordField.getText(), (String) role.getValue());
             registrationMessage.setText("Account created successfully!");
@@ -55,4 +55,6 @@ public class Register {
             e.printStackTrace();
         }
     }
+
+
 }

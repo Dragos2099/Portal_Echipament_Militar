@@ -2,6 +2,7 @@ package Oferta.controllers;
 
 import Cerere.model.Request;
 import Cerere.services.CerereService;
+import Oferta.model.Oferta;
 import Register.services.FileSystemService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -32,16 +33,16 @@ public class TableCereriOferta implements Initializable {
     private static List<Request> cereri;
     private static final Path USERS_PATH = FileSystemService.getPathToFile("cerere", "cerere.json");
     @FXML
-    private javafx.scene.control.TableView<Request> TableView;
+    public javafx.scene.control.TableView<Request> TableView;
 
     @FXML
-    private TableColumn<Request,String> Echipament;
+    public TableColumn<Request,String> Echipament;
 
     @FXML
-    private TableColumn<Request,String> Bucati;
+    public TableColumn<Request,String> Bucati;
 
     @FXML
-    private TableColumn<Request,String> Urgent;
+    public TableColumn<Request,String> Urgent;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -57,7 +58,7 @@ public class TableCereriOferta implements Initializable {
         }
     }
 
-    private ObservableList<Request> getPeople() throws IOException {
+    public ObservableList<Request> getPeople() throws IOException {
         ObservableList<Request> requests= FXCollections.observableArrayList();
 
         if (!Files.exists(USERS_PATH)) {
@@ -87,5 +88,9 @@ public class TableCereriOferta implements Initializable {
     public static Request metoda(){
 
         return req;
+    }
+
+    public List<Request> getOferte() {
+        return cereri;
     }
 }

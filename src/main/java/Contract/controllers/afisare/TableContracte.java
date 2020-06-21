@@ -26,21 +26,21 @@ public class TableContracte implements Initializable {
     private static List<Contracts> contracts;
     private static final Path USERS_PATH = FileSystemService.getPathToFile("contract", "contracts.json");
     @FXML
-    private javafx.scene.control.TableView<Contracts> TableView;
+    public javafx.scene.control.TableView<Contracts> TableView;
 
     @FXML
-    private TableColumn<Contracts,String> Data;
+    public TableColumn<Contracts,String> Data;
 
     @FXML
-    private TableColumn<Contracts,String> Echipamente;
+    public TableColumn<Contracts,String> Echipamente;
     @FXML
-    private TableColumn<Contracts,String> Total;
+    public TableColumn<Contracts,String> Total;
     @FXML
-    private TableColumn<Contracts,String> Buc;
+    public TableColumn<Contracts,String> Buc;
     @FXML
-    private TableColumn<Contracts,String> Nr_bm;
+    public TableColumn<Contracts,String> Nr_bm;
     @FXML
-    private TableColumn<Contracts,String> Nr_f;
+    public TableColumn<Contracts,String> Nr_f;
 
 
     @Override
@@ -63,7 +63,7 @@ public class TableContracte implements Initializable {
 
     }
 
-    private ObservableList<Contracts> getPeople() throws IOException {
+    public ObservableList<Contracts> getPeople() throws IOException {
 
         ObservableList<Contracts> contracte= FXCollections.observableArrayList();
 
@@ -84,6 +84,10 @@ public class TableContracte implements Initializable {
         return contracte;
 
 
+    }
+
+    public List<Contracts> getContracts(){
+        return contracts;
     }
 
 }

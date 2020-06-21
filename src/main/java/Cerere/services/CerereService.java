@@ -5,6 +5,7 @@ import Cerere.exceptions.CerereAlreadyExistsException;
 import Cerere.exceptions.CouldNotWriteCerereException;
 import Cerere.model.Request;
 
+import Register.model.User;
 import Register.services.FileSystemService;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -58,5 +59,10 @@ public class CerereService {
                 throw new CerereAlreadyExistsException();
         }
 
+    }
+
+
+    public static List<Request> getCereri() {
+        return cereri;
     }
 }
