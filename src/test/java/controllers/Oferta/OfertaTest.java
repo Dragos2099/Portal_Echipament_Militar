@@ -57,10 +57,6 @@ public class OfertaTest extends ApplicationTest {
         controller.Date.setValue(LocalDate.of(2020,12,12));
     }
 
-    @After
-    public void tearDown() {
-        controller = null;
-    }
 
     @Test
     public void testHandleAddOfertaActionCode() {
@@ -97,11 +93,7 @@ public class OfertaTest extends ApplicationTest {
         assertEquals(1, OfertaService.oferte.size());
     }
 
-    @Test (expected = NullPointerException.class)
-    public void testAnulare() throws Exception {
-        ActionEvent actionEvent = null;
-        controller.Anulare(actionEvent);
-    }
+
 
 
 }

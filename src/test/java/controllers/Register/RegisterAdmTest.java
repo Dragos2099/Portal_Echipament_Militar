@@ -44,10 +44,7 @@ public class RegisterAdmTest extends ApplicationTest {
         controller.usernameField.setText(TEST_USER);
     }
 
-    @After
-    public void tearDown() {
-        controller = null;
-    }
+
 
     @Test
     public void testHandleAddUserActionCode() {

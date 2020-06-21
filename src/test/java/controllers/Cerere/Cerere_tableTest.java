@@ -53,10 +53,7 @@ public class Cerere_tableTest extends ApplicationTest {
 
     }
 
-    @After
-    public void tearDown() {
-        controller = null;
-    }
+
 
     @Test
     public void testPeople() throws IOException {

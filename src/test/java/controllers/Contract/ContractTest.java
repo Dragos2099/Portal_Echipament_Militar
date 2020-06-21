@@ -64,10 +64,7 @@ public class ContractTest extends ApplicationTest {
 
     }
 
-    @After
-    public void tearDown() {
-        controller = null;
-    }
+
 
     @Test
     public void testHandleAddContractActionCode() throws IOException {

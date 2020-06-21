@@ -61,11 +61,6 @@ public class LoginTest extends ApplicationTest {
         controller.usernameField.setText(TEST_USER);
     }
 
-    @After
-    public void tearDown() {
-        controller = null;
-        controller_reg=null;
-    }
 
     @Test
     public void testPressButton() throws IOException {

@@ -51,10 +51,7 @@ public class CerereTest extends ApplicationTest {
         controller.Urgent.setValue("Da");
     }
 
-    @After
-    public void tearDown() {
-        controller = null;
-    }
+
 
     @Test
     public void testHandleAddCerereActionCode() {
@@ -142,10 +139,6 @@ public class CerereTest extends ApplicationTest {
         assertEquals(1, CerereService.cereri.size());
     }
 
-    @Test (expected = NullPointerException.class)
-    public void testAnulare() throws Exception {
-        ActionEvent actionEvent = null;
-        controller.Anulare(actionEvent);
-    }
+
 
 }

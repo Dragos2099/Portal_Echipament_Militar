@@ -48,10 +48,7 @@ public class Cerere_editTest extends ApplicationTest {
 
     }
 
-    @After
-    public void tearDown() {
-        controller = null;
-    }
+
 
     @Test
     public void testPeople() {

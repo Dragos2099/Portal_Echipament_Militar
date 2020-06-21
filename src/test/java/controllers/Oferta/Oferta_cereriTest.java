@@ -50,10 +50,7 @@ public class Oferta_cereriTest extends ApplicationTest {
 
     }
 
-    @After
-    public void tearDown() {
-        controller = null;
-    }
+
 
     @Test
     public void testPeople() throws IOException {
