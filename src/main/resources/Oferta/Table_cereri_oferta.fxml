@@ -1,23 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="345.0" xmlns="http://javafx.com/javafx/10.0.2-internal"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.TableCereriOferta">
-    <TableView fx:id="TableView" layoutX="56.0" layoutY="92.0" prefHeight="216.0" prefWidth="234.0">
+<AnchorPane prefHeight="400.0" prefWidth="345.0" style="-fx-background-color: #a19472;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Oferta.controllers.TableCereriOferta">
+    <ImageView fitHeight="216.0" fitWidth="345.0" layoutX="1.0" layoutY="92.0" opacity="0.55" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../images/16.jpg"/>
+    </ImageView>
+    <TableView fx:id="TableView" layoutX="56.0" layoutY="92.0" opacity="0.78" prefHeight="216.0" prefWidth="234.0" style="-fx-background-color: #a19472;">
         <columns>
-            <TableColumn fx:id="Echipament" prefWidth="75.0" text="Echipament"/>
-            <TableColumn fx:id="Bucati" prefWidth="75.0" text="Bucati"/>
-            <TableColumn fx:id="Urgent" prefWidth="83.0" text="Urgent"/>
+            <TableColumn fx:id="Echipament" prefWidth="75.0" text="Echipament" />
+            <TableColumn fx:id="Bucati" prefWidth="75.0" text="Bucati" />
+            <TableColumn fx:id="Urgent" prefWidth="83.0" text="Urgent" />
         </columns>
     </TableView>
-    <Text layoutX="63.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectati o cerere">
+    <Text layoutX="3.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selectati o cerere">
         <font>
-            <Font size="29.0"/>
+            <Font name="Copperplate Gothic Bold" size="32.0" />
         </font>
     </Text>
-    <Button layoutX="123.0" layoutY="338.0" mnemonicParsing="false" onAction="#selectareCerere"
-            text="Selectare cerere"/>
+    <Button layoutX="123.0" layoutY="338.0" mnemonicParsing="false" onAction="#selectareCerere" style="-fx-background-color: #cfaf70;" text="Selectare cerere">
+        <font>
+            <Font size="13.0" />
+        </font></Button>
 </AnchorPane>
